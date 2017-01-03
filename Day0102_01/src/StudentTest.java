@@ -11,17 +11,17 @@ class Student{
 	int math;
 	int english;
 	
-	public String naming(String i){
+	private String naming(String i){
 		System.out.print(i);
 		Scanner s= new Scanner(System.in);
 		return s.nextLine();
 	}
-	public int score(String j){
+	private int score(String j){
 		System.out.print(j);
 		Scanner scan = new Scanner(System.in);
 		return scan.nextInt();
 	}
-	public void result(){
+	private void result(){
 		sum = korean+math+english;
 		average = (double)sum/3;
 	}
