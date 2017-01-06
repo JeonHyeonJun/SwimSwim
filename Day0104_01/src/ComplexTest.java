@@ -6,7 +6,6 @@ public class ComplexTest {
 		
 		Complex c3 = Complex.add(c1,c2);
 		Complex c4 = Complex.gob(c1,c2);
-		System.out.println(c1);
 		System.out.println("µ¡¼À°á°ú "+c3);
 		System.out.println("°ö¼À°á°ú "+c4);
 	}
