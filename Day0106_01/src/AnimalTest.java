@@ -3,25 +3,24 @@ class Animal{
 	public String name;
 	
 	public void bark(){
-		System.out.println("µ¿¹°ÀÇ ¿ïÀ½¼Ò¸®");
 	}
 }
 
 class Dog extends Animal{
 	public void bark(){
-		System.out.println("¸Û¸Û");
+		System.out.println("ë©ë©");
 	}
 }
 
 class Cow extends Animal{
 	public void bark(){
-		System.out.println("À½¸ŞÀ½¸Ş");
+		System.out.println("ìŒë©”ìŒë©”");
 	}
 }
 
 class Cat extends Animal{
 	public void bark(){
-		System.out.println("³Ä¿ë¾ß¿ë");
+		System.out.println("ëƒì˜¹ì•¼ìš©");
 	}
 }
 
