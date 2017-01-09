@@ -33,6 +33,5 @@ public class OuterClassTest {
 		inner.method();
 		inner2.method();
 		//		new OuterClass();
-		
 	}
 }
