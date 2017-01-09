@@ -17,17 +17,14 @@ public class BookTest {
 				return d*350;
 			}
 		};
-//		Novel novel = new Novel("1","소설","소설출판사","소설책");
-//		Poet poet = new Poet("2","시인","시출판사","시집");
-//		ScienceFiction science = new ScienceFiction("1","공상소설가","공상소설출판사","공상소설책");
+		Novel novel = new Novel("1","소설","소설출판사","소설책");
+		Poet poet = new Poet("2","시인","시출판사","시집");
+		ScienceFiction science = new ScienceFiction("1","공상소설가","공상소설출판사","공상소설책");
 //		
 //		for(int i=0; i<book.length; i++)
 //			System.out.println("book["+i+"]연체료: "+book[i].day(5));
 //			
-////		if(novel.equals(science))
-////		System.out.println("����å");
-//		
-//		System.out.println(novel.equals(science));
-
+		if(novel.equals(science))
+		System.out.println("같은책");
 	}
 }
