@@ -8,7 +8,6 @@ public class BookTest {
 		book[2] = new ScienceFiction("977-78-5737-036-3", "중2", "우주출판사", "이것이공상과학이다");
 		book[3] = new Novel("978-89-6848-147-5","신융권","한빚미디어","ㅇl것이자바다");
 		
-		
 		for(Book b : book)
 			System.out.println(b.day(3));
 		

@@ -11,5 +11,4 @@ public class Essay extends Book {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
 }

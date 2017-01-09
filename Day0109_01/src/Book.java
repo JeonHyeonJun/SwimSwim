@@ -4,7 +4,6 @@ public abstract class Book {		//추상클래스
 	protected String writer;
 	protected String publisher;
 	protected String title;
-
 	
 	public Book(String i, String w, String p, String t){
 		i = isbn;
