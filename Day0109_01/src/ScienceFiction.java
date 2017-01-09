@@ -6,7 +6,6 @@ public class ScienceFiction extends Book{
 		super(i,w,p,t);
 		System.out.println("ISBN: " +i+ " 저자: "+w+ " 출판사: " +p+ " 제목: " +t);
 	}
-	
 	public int day(int d){
 		return d*DAY;
 	}
