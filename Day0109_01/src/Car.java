@@ -10,20 +10,20 @@ public class Car {
 		return model;
 	}
 	
-//	public boolean equals(Object obj){
-//		if (obj instanceof Car)
-//			return model.equals(((Car) obj).getMode());
-//		else
-//			return false;
-//	}
+	public boolean equals(Object obj){
+		if (obj instanceof Car)
+			return model.equals(((Car) obj).getMode());
+		else
+			return false;
+	}
 	
 	public static void main(String[] args) {
 		Car firstCar = new Car("HMW520");
 		Car secondCar = new Car("HMW520");
 		if(firstCar.equals(secondCar)){
-			System.out.println("µ¿ÀÏÇÑ Á¾·ùÀÇ ÀÚµ¿Â÷ÀÔ´Ï´Ù.");
+			System.out.println("ê°™ì€ ëª¨ë¸ì…ë‹ˆë‹¤");
 		} else {
-			System.out.println("µ¿ÀÏÇÏÁö ¾ÊÀº Á¾·ùÀÇ ÀÚµ¿Â÷ÀÔ´Ï´Ù.");
+			System.out.println("ë‹¤ë¥¸ ëª¨ë¸ì…ë‹ˆë‹¤");
 		}
 	}
 }
