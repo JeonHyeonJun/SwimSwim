@@ -1,4 +1,4 @@
-package v2;
+package v2;	//중복된 기능구현이 발생함
 
 public abstract class Robot {
 	protected String name;
