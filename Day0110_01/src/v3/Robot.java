@@ -1,4 +1,4 @@
-package v3;
+package v3; // 객체관리를 각자하다보니 중복사용되는 객체에 댛서 공유하거나 기타 여지가 없음
 
 public abstract class Robot {
 	protected String name;
