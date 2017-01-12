@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BankApplication {
 	private static List<Account> accountArray = new ArrayList<Account>();
 	private static Scanner scanner = new Scanner(System.in);
-	private static int use = 0;
+//	private static int use = 0;
 
 	public static void main(String[] args) {
 		boolean run = true;
@@ -64,7 +64,7 @@ public class BankApplication {
 		}
 		accountArray.add(new Account(a,b,c));
 		System.out.println("결과: 계좌가 생성되었습니다.");
-		use++;
+//		use++;
 	}
 
 	// 계좌목록
@@ -160,7 +160,7 @@ public class BankApplication {
 	}
 	
 	private static void deleteAccount(String ano){
-		for(int i =0; i<use; i++){
+		for(int i =0; i<accountArray.size(); i++){
 			if(accountArray.get(i).getAno().equals(ano))
 			{
 				accountArray.remove(i);
