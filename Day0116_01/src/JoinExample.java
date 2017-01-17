@@ -5,7 +5,7 @@ public class JoinExample {
 		sumThread.start();
 		
 		try{
-			sumThread.join();
+			sumThread.join();	//sumThread가 끝날때까지 다음으로 넘어가지 않음
 		} catch (InterruptedException e) {
 		}
 		
