@@ -1,8 +1,9 @@
 package attend;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Professor extends Member{
+public class Professor extends Member implements Serializable{
 	private List<Subject> subject = new ArrayList<Subject>();
 	private int attend;
 

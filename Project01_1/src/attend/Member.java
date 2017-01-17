@@ -1,6 +1,8 @@
 package attend;
 
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable{
 	private String ID;
 	private String pass;
 	private String name;

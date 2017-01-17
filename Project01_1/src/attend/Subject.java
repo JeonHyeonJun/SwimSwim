@@ -1,7 +1,8 @@
 package attend;
 
+import java.io.Serializable;
 
-public class Subject {
+public class Subject implements Serializable{
 	private int subjectcode;
 	private String subjectname;
 	private int number,attendance;
