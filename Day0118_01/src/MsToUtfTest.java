@@ -9,17 +9,20 @@ import java.io.InputStreamReader;
 public class MsToUtfTest {
 	public static void main(String[] args) {
 		BufferedReader in = null;
+		BufferedWriter out = null;
 		
 		try{
 			//디코딩이라는건 비트열이 문자데이터로 복원되는 과정
 			//이 스트림은 이미 문자열스트림으로 기본세팅인 UTF-8이라 못씀
 									//가공스트림				//변환할 문자스트림(Arraytest1.java)과 방식(MS949)
 			in = new BufferedReader(new InputStreamReader(new FileInputStream("Arraytest1.java"), "MS949"));
+			out = new BufferedWriter(new FileWriter("Arraytest1_1.txt"));
 			
 			
 			String msg = null;
 			while ( (msg = in.readLine()) != null){
 				System.out.println(msg);
+				out.write(msg + "\n");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -27,6 +30,8 @@ public class MsToUtfTest {
 			try {
 				if( in != null)
 					in.close();
+				if( out != null)
+					out.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
