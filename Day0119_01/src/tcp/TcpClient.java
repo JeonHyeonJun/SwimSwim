@@ -13,14 +13,14 @@ public class TcpClient {
 		BufferedReader br = null;
 		BufferedWriter bw = null;
 		try {
-			socket = new Socket("70.12.111.106", 5000);
+			socket = new Socket("70.12.111.105", 5000);
 			
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			
 			String msg = br.readLine();
 			System.out.println(msg);
-			bw.write("Nice boat!");
+			bw.write("Nice boat!\n");
 			bw.flush();
 			
 		} catch (IOException e) {
