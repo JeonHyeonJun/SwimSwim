@@ -2,7 +2,7 @@
 public class Account {
 	private int ano;
 	private String owner;
-	private int balance;
+	private int balance; 
 	
 	public int getAno() {
 		return ano;
