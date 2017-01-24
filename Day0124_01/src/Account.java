@@ -8,7 +8,7 @@ public class Account {
 		return ano;
 	}
 	public void setAno(int ano) {
-		this.ano = ano;
+		this.ano = ano; 
 	}
 	public String getOwner() {
 		return owner;

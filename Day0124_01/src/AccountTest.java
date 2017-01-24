@@ -9,9 +9,9 @@ public class AccountTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		AccountDao acc = AccountDao.getInstance();
-
+ 
 		boolean run = true;
-
+ 
 		// insert("1","2",3);
 		// update("111","zz",777);
 		while (run) {
