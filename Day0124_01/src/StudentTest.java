@@ -7,9 +7,9 @@ public class StudentTest {
 		boolean run = true;
 		
 		while(run){
-			System.out.println("======================");
-			System.out.println("1.추가|2.수정|3.삭제|4.종료");
-			System.out.println("======================");
+			System.out.println("==========================");
+			System.out.println("1.추가|2.수정|3.삭제|4.조회|5.종료");
+			System.out.println("==========================");
 			System.out.print("선택> ");
 			int select = scan.nextInt();
 			
@@ -39,6 +39,9 @@ public class StudentTest {
 				st.delete(s_id);
 				
 			} else if (select == 4){
+				for(int i=0 ; i<st.selectAll().size(); i++)
+				System.out.println(st.selectAll().get(i));
+			} else if (select == 5){
 				run = false;
 				st.close();
 			}

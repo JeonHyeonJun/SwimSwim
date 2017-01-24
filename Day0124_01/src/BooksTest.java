@@ -8,9 +8,9 @@ public class BooksTest {
 		boolean run = true;
 		
 		while(run){
-			System.out.println("======================");
-			System.out.println("1.추가|2.수정|3.삭제|4.종료");
-			System.out.println("======================");
+			System.out.println("==========================");
+			System.out.println("1.추가|2.수정|3.삭제|4.조회|5.종료");
+			System.out.println("==========================");
 			System.out.print("선택> ");
 			int select = scan.nextInt();
 			
@@ -40,6 +40,9 @@ public class BooksTest {
 				book.delete(year);
 				
 			} else if (select == 4){
+				for(int i = 0; i<book.selectAll().size(); i++)
+				System.out.println(book.selectAll().get(i));
+			} else if (select == 5){
 				run = false;
 				System.out.println("종료Death!");
 				book.close();
