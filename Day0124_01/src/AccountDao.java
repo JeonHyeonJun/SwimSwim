@@ -57,7 +57,7 @@ public class AccountDao {
 
 	public void update(String ano, String owner, int balance) {
 		// 계좌번호, 계좌주, 금액을 입력받아서 계좌번호에 해닫하는 레코드의 계좌주와 금액정보를 받은값으로 수정
-		String sql = "update account set owner=?,banlance=? where ano=?";
+		String sql = "update account set owner=?,balance=? where ano=?";
 		PreparedStatement prtmt = null;
 
 		try {
