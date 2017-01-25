@@ -28,7 +28,10 @@ public class AccountTest {
 				String owner = scan.next();
 				System.out.print("금액 ");
 				int balance = scan.nextInt();
-				acc.insert(ano, owner, balance);
+				if(ano.equals(acc.selectOne(ano).getAno()))
+					acc.insert(ano, owner, balance);
+				else
+					System.out.println("중복된 계좌번호입니다.");
 			} else if (select == 2) {
 				System.out.print("계좌주 ");
 				String owner = scan.next();
@@ -36,6 +39,7 @@ public class AccountTest {
 				int balance = scan.nextInt();
 				System.out.print("계좌번호 ");
 				String ano = scan.next();
+				if(ano.equals(acc.selectOne(ano).getAno()))
 				acc.update(ano, owner, balance);
 			} else if (select == 3) {
 				System.out.print("계좌번호 ");
