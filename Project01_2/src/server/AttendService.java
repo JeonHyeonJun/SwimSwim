@@ -8,7 +8,7 @@ import protocol.Student_Subject;
 import protocol.Subject;
 
 public class AttendService {
-	private AttendDao ad;
+	private AttendDao ad; 
 	
 	public AttendService(){
 		ad = AttendDao.getInstance();	

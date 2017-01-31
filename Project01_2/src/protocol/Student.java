@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Student implements Serializable{
 	private String stnumber;
 	private String name;
-	private String id;
+	private String id; 
 	private String password;
 	
 	public String getStnumber() {

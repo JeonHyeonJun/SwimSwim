@@ -3,7 +3,7 @@ package protocol;
 import java.io.Serializable;
 
 public class Professor implements Serializable{
-	private String prnumber;
+	private String prnumber; 
 	private String name;
 	private String id;
 	private String password;

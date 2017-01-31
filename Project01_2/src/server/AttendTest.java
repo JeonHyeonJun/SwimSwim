@@ -1,7 +1,7 @@
 package server;
 
 import java.util.Scanner;
-
+ 
 public class AttendTest {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

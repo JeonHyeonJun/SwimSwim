@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Student_Subject implements Serializable{
 	private String stnumber;
-	private String subnumber;
+	private String subnumber; 
 	private int attendnumber;
 	public String getStnumber() {
 		return stnumber;

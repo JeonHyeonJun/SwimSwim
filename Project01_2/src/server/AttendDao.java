@@ -13,7 +13,7 @@ import protocol.Student;
 import protocol.Student_Subject;
 import protocol.Subject;
 
-public class AttendDao {
+public class AttendDao { 
 	private Connection connection;
 	private static String URL = "jdbc:mysql://127.0.0.1/attendance_db";
 	private static String USERNAME = "root";

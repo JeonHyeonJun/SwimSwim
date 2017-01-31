@@ -5,7 +5,7 @@ public class Subject implements Serializable{
 	private String subnumber;
 	private String subname;
 	private String prnumber;
-	private int subAttendnumber;
+	private int subAttendnumber; 
 	public String getSubnumber() {
 		return subnumber;
 	}
