@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>구구단을 외자</title>
+<title>구구단을 외자</title> 
 </head>
 <body>
 <%
