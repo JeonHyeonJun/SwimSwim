@@ -7,7 +7,7 @@
 <title>≥ ¿« ∞±¿ªµ∑¿∫</title>
 </head>
 <body>
-	<%
+	<% 
 		String money = request.getParameter("money");
 		String gmri = request.getParameter("gmri");
 		String month = request.getParameter("month");
