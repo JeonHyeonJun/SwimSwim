@@ -12,7 +12,7 @@
 		성명: <input type="text" name="person" /> <br> 성별: <input
 			type="radio" name="sex" value="male" />남성 <input type="radio"
 			name="sex" value="female" />여성<br> 직업: <select name="job"
-			size="1">
+			size="1"> 
 			<option>학생</option>
 			<option>회사원</option>
 			<option>공무원</option>
