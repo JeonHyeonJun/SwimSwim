@@ -7,6 +7,6 @@
 <title>누진세결과</title>
 </head>
 <body>
-	누진세는 <%=request.getParameter("result") %>원입니다.
+	누진세는 <%=request.getAttribute("result") %>원입니다.
 </body>
 </html>

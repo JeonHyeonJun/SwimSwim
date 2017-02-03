@@ -26,9 +26,9 @@
 			break;
 		}
 	}
+	request.setAttribute("result", result);
+	//"result"라는 이름에 Object타입으로 result값을 넣어놈
 	%>
-	<jsp:forward page="elecResult.jsp">
-	<jsp:param value="<%=result %>" name="result"/>
-	</jsp:forward>
+	<jsp:forward page="elecResult.jsp"></jsp:forward>
 </body>
 </html>
