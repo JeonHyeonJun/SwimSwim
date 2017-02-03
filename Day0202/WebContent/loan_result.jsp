@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ë„ˆì˜ ê°šì„ëˆì€</title>
+<title>³ÊÀÇ °±À»µ·Àº</title>
 </head>
 <body>
 	<%
@@ -21,11 +21,9 @@
 		int[] onegm = new int[c];
 		int[] e = new int[c];
 		int[] jan = new int[c];
-
 		if (select.equals("onerigm")) {
 			double result = ((a * b_month) * d) / (d - 1);
 			int result2 = (int) (result + 0.5);
-
 			for (int i = 0; i < c; i++) {
 				double eja = a * b_month;
 				int eja2 = (int) (eja + 0.5);
@@ -33,48 +31,45 @@
 				int one2 = (int) (one + 0.5);
 				double zan = a - one;
 				int zan2 = (int) (zan + 0.5);
-
 				onegm[i] = one2;
 				e[i] = eja2;
 				jan[i] = zan2;
-
 				a = zan;
 			}
 	%>
 	<table border=1>
-		<th>ëŒ€ì¶œê¸ˆì•¡</th>
-		<th>ëŒ€ì¶œê¸°ê°„</th>
-		<th>ëŒ€ì¶œê¸ˆë¦¬</th>
-		<th>ìƒí™˜ê¸ˆ</th>
+		<th>´ëÃâ±İ¾×</th>
+		<th>´ëÃâ±â°£</th>
+		<th>´ëÃâ±İ¸®</th>
+		<th>»óÈ¯±İ</th>
 		<tr>
-			<td><%=money%>ì›</td>
-			<td><%=month%>ê°œì›”</td>
+			<td><%=money%>¿ø</td>
+			<td><%=month%>°³¿ù</td>
 			<td><%=gmri%>%</td>
-			<td><%=result2%>ì›</td>
+			<td><%=result2%>¿ø</td>
 		</tr>
 	</table>
 	<table border=1>
-		<th>íšŒì°¨</th>
-		<th>ìƒí™˜ê¸ˆ</th>
-		<th>ì›ê¸ˆ</th>
-		<th>ì´ì</th>
-		<th>ì”ì•¡</th>
+		<th>È¸Â÷</th>
+		<th>»óÈ¯±İ</th>
+		<th>¿ø±İ</th>
+		<th>ÀÌÀÚ</th>
+		<th>ÀÜ¾×</th>
 
 		<%
 			for (int j = 0; j < c; j++) {
 					out.println("<tr>");
 					out.println("<td>" + (j + 1) + "</td>");
-					out.println("<td>" + result2 + "ì›</td>");
-					out.println("<td>" + onegm[j] + "ì›</td>");
-					out.println("<td>" + e[j] + "ì›</td>");
-					out.println("<td>" + jan[j] + "ì›</td>");
+					out.println("<td>" + result2 + "¿ø</td>");
+					out.println("<td>" + onegm[j] + "¿ø</td>");
+					out.println("<td>" + e[j] + "¿ø</td>");
+					out.println("<td>" + jan[j] + "¿ø</td>");
 				}
 				out.println("</table>");
 			} 
 			else if (select.equals("onegm")) {
 				double result = a / c;
 				int result2 = (int) (result + 0.5);
-
 				for (int i = 0; i < c; i++) {
 					double eja = a * b_month;
 					int eja2 = (int) (eja + 0.5);
@@ -83,39 +78,38 @@
 					double zan = a - result;
 					int zan2 = (int) (zan + 0.5);
 					a = zan;
-
 					sanghwan[i] = sang2;
 					e[i] = eja2;
 					jan[i] = zan2;
 				}
 		%>
 		<table border=1>
-			<th>ëŒ€ì¶œê¸ˆì•¡</th>
-			<th>ëŒ€ì¶œê¸°ê°„</th>
-			<th>ëŒ€ì¶œê¸ˆë¦¬</th>
-			<th>ìƒí™˜ê¸ˆ</th>
+			<th>´ëÃâ±İ¾×</th>
+			<th>´ëÃâ±â°£</th>
+			<th>´ëÃâ±İ¸®</th>
+			<th>»óÈ¯±İ</th>
 			<tr>
-				<td><%=money%>ì›</td>
-				<td><%=month%>ê°œì›”</td>
+				<td><%=money%>¿ø</td>
+				<td><%=month%>°³¿ù</td>
 				<td><%=gmri%>%</td>
-				<td><%=result2%>ì›</td>
+				<td><%=result2%>¿ø</td>
 			</tr>
 		</table>
 		<table border=1>
-			<th>íšŒì°¨</th>
-			<th>ìƒí™˜ê¸ˆ</th>
-			<th>ì›ê¸ˆ</th>
-			<th>ì´ì</th>
-			<th>ì”ì•¡</th>
+			<th>È¸Â÷</th>
+			<th>»óÈ¯±İ</th>
+			<th>¿ø±İ</th>
+			<th>ÀÌÀÚ</th>
+			<th>ÀÜ¾×</th>
 
 			<%
 				for (int j = 0; j < c; j++) {
 						out.println("<tr>");
 						out.println("<td>" + (j + 1) + "</td>");
-						out.println("<td>" + sanghwan[j] + "ì›</td>");
-						out.println("<td>" + result2 + "ì›</td>");
-						out.println("<td>" + e[j] + "ì›</td>");
-						out.println("<td>" + jan[j] + "ì›</td>");
+						out.println("<td>" + sanghwan[j] + "¿ø</td>");
+						out.println("<td>" + result2 + "¿ø</td>");
+						out.println("<td>" + e[j] + "¿ø</td>");
+						out.println("<td>" + jan[j] + "¿ø</td>");
 					}
 					out.println("</table>");
 				}
