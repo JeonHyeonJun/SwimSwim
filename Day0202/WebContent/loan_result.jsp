@@ -34,7 +34,7 @@
 				onegm[i] = one2;
 				e[i] = eja2;
 				jan[i] = zan2;
-				a = zan;
+				a = zan; 
 			}
 	%>
 	<table border=1>
