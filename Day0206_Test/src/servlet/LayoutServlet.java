@@ -19,7 +19,9 @@ public class LayoutServlet extends HttpServlet {
 				url = "../main/loanInput.jsp";
 			else if (type.equals("add"))
 				url = "../main/addInput.jsp";
-
+			else if (type.equals("date"))
+				url = "../module/whatTime.jsp";
+			
 			req.setAttribute("url", url);
 			req.getRequestDispatcher("main/layout.jsp").forward(req, resp);
 		}

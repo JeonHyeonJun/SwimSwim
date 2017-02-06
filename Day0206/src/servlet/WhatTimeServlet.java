@@ -30,6 +30,9 @@ public class WhatTimeServlet extends HttpServlet{
 		pw.println(date);
 		pw.println("</body>");
 		pw.println("</HTML>");
+		
+		req.setAttribute("date", date);
+		req.getRequestDispatcher("/module/whatTime.jsp").forward(req, resp);
 	}
 
 	@Override
