@@ -31,7 +31,7 @@ public class AddProcServlet extends HttpServlet{
 //		pw.println("</HTML>");
 		
 		req.setAttribute("result", c);
-		req.getRequestDispatcher("addresult.jsp").forward(req, resp);
+		req.getRequestDispatcher("module/addresult.jsp").forward(req, resp);
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
