@@ -9,7 +9,7 @@
 <body>
 	<form action="login" method="post">
 		아이디 : <input type="text" name="id"/><br>
-		암 &nbsp;&nbsp; 호 : <input type="text" name="pwd"/><br>
+		암 &nbsp;&nbsp; 호 : <input type="password" name="pwd"/><br>
 		<input type="submit" value="로그인">
 		<input type="button" value="돌아가기" onclick="location.href='javascript:history.go(-1)'">
 	</form>
