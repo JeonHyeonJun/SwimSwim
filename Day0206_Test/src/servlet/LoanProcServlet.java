@@ -65,7 +65,7 @@ public class LoanProcServlet extends HelloServlet{
 			}
 		}
 		req.setAttribute("result", list);
-		req.getRequestDispatcher("module/loanResult.jsp").forward(req, resp);
+		req.getRequestDispatcher("layout.do?type=loanresult").forward(req, resp);
 	}
 
 	@Override

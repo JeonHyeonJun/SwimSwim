@@ -7,27 +7,9 @@
 <title>이거나오나?</title>
 </head>
 <body>
-
-	<table border="1" width="1024" height="768">
-		<tr height="100">
-			<td colspan="2"><jsp:include page="header.jsp" flush="false"></jsp:include>
-			</td>
-		</tr>
-		<tr height="300">
-			<td width="100"><jsp:include page="left.jsp"
-					flush="false"></jsp:include></td>
-			<td>
 				<%
 					int result = (int) request.getAttribute("result");
 					out.println(result);
-				%>
-			</td>
-		</tr>
-		<tr height="100">
-			<td colspan="2"><jsp:include page="footer.jsp" flush="false"></jsp:include>
-			</td>
-		</tr>
-	</table>
-
+				%>		
 </body>
 </html>

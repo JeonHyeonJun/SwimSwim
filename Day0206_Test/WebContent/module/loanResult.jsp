@@ -9,15 +9,6 @@
 <title>론리</title>
 </head>
 <body>
-	<table border="1" width="1024" height="768">
-		<tr height="100">
-			<td colspan="2"><jsp:include page="header.jsp" flush="false"></jsp:include>
-			</td>
-		</tr>
-		<tr height="300">
-			<td align="left" width="100"><jsp:include page="left.jsp"
-					flush="false"></jsp:include></td>
-			<td>
 				<table border=1>
 					<th>회차</th>
 					<th>상환금</th>
@@ -39,14 +30,5 @@
 						}
 						out.println("</table>");
 					%>
-				
-			</td>
-		</tr>
-		<tr height="100">
-			<td colspan="2"><jsp:include page="footer.jsp" flush="false"></jsp:include>
-			</td>
-		</tr>
-	</table>
-
 </body>
 </html>

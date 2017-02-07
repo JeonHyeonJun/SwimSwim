@@ -17,10 +17,15 @@ public class LayoutServlet extends HttpServlet {
 		if (type != null) {
 			if (type.equals("loan"))
 				url = "../main/loanInput.jsp";
+			else if (type.equals("loanresult"))
+				url = "../module/loanResult.jsp";
 			else if (type.equals("add"))
 				url = "../main/addInput.jsp";
+			else if (type.equals("addresult"))
+				url = "../module/addresult.jsp";
 			else if (type.equals("date"))
 				url = "../module/whatTime.jsp";
+			
 			
 			req.setAttribute("url", url);
 			req.getRequestDispatcher("main/layout.jsp").forward(req, resp);

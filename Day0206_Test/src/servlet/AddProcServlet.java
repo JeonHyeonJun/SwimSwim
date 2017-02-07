@@ -19,19 +19,9 @@ public class AddProcServlet extends HttpServlet{
 		int a = Integer.parseInt(req.getParameter("1"));
 		int b = Integer.parseInt(req.getParameter("2"));
 		int c = a + b;
-//		pw.println("<HTML>");
-//		pw.println("<head>");
-//		pw.println("<title>");
-//		pw.println("결과");
-//		pw.println("</title>");
-//		pw.println("</head>");
-//		pw.println("<body>");
-//		pw.println(c);
-//		pw.println("</body>");
-//		pw.println("</HTML>");
 		
 		req.setAttribute("result", c);
-		req.getRequestDispatcher("module/addresult.jsp").forward(req, resp);
+		req.getRequestDispatcher("layout.do?type=addresult").forward(req, resp);
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
