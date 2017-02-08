@@ -22,7 +22,10 @@ public class LoginServlet extends HttpServlet{
 		
 		if(member != null){
 			if(member.getId().equals(id) && member.getPwd().equals(pwd)){
-				resp.sendRedirect("loginSuccess.jsp");
+				req.setAttribute("name", member.getName());
+				req.setAttribute("id", member.getId());
+				req.getRequestDispatcher("loginSuccess.jsp").forward(req, resp);
+				return;
 			}
 			else
 				resp.sendRedirect("loginFail.jsp");

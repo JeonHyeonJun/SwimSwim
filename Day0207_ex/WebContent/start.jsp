@@ -11,7 +11,7 @@
 		<a href="main?type=create">회원가입</a><br>
 		<a href="main?type=login">로그인</a><br>
 		<a href="main?type=pwd">비밀번호변경</a><br>
-		<a href="main?type=delete">회원탈퇴</a><br>
 		<a href="main?type=list">회원목록</a><br>
+		<a href="main?type=logout">로그아웃</a>
 </body>
 </html>

@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>결과</title>
+<title>구운쿠키선물받기</title>
 </head>
 <body>
+	<h3>클라이언트로부터 얻어온 Cookie</h3>
 	<%
-		String url = request.getParameter("url");
+		Cookie[] cookies = request.getCookies();
+		for(Cookie c : cookies)
+			out.println(c.getName()+" : "+c.getValue()+"<br>");
 	%>
-	<jsp:include page="<%= url %>"></jsp:include>
 </body>
 </html>

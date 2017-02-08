@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<input type="button" value="모든회원보기" onclick="location.href='list'">
 </body>
 </html>

@@ -14,19 +14,23 @@
 			<tr>
 				<th>아이디</th>
 				<th>이름</th>
+				<th>파개한다</th>
 			</tr>
 			<%
 					List<Member> list = (List) request.getAttribute("list");
 					for (int i = 0; i < list.size(); i++) {
+						String id = list.get(i).getId();
 				%>
 			<tr>
 				<td><%=list.get(i).getId()%></td>
 				<td><%=list.get(i).getName()%></td>
+				<td><input type="button" value="사크죠" onclick="location.href='delete?type=<%=list.get(i).getId()%>'"></td>
 			</tr>
 			<%
 					}
 				%>
 		</table>
+		<input type="button" value="메인으로" onclick="location.href='start.jsp'">
 	</center>
 </body>
 </html>

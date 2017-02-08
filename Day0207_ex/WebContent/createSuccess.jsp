@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	가입이 완료되었당
+	가입이 완료되었당<br>
+	<input type="button" value="돌아가기" onclick="location.href='start.jsp'">
 </body>
 </html>

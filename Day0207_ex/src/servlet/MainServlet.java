@@ -37,6 +37,9 @@ public class MainServlet extends HttpServlet{
 		else if(type.equals("listAll")){
 			req.getRequestDispatcher("viewAllMember.jsp").forward(req, resp);
 		}
+		else if(type.equals("logout")){
+			resp.sendRedirect("logout.jsp");
+		}
 	}
 
 	@Override

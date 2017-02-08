@@ -4,10 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>실패다요</title>
+<title>쿠키폐기</title>
 </head>
 <body>
-	로그인 실패<br>
+	<%
+		Cookie cookie = new Cookie("id","");
+		cookie.setMaxAge(0);	//쿠키의 유효기간을 만료시킴
+		response.addCookie(cookie);
+		cookie = new Cookie("name","");
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+	%>
+	<h3>로그아웃되었습니다 </h3><br>
 	<input type="button" value="메인으로" onclick="location.href='start.jsp'">
+	</a>
 </body>
 </html>
