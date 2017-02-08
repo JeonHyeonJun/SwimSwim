@@ -33,13 +33,25 @@ public class UpdateServlet extends HttpServlet{
 			}
 			else if(type.equals("2")){
 				int result = (sd.selectCode(stock.getCode()).getCnt())-(stock.getCnt());
-				stock.setCnt(result);
-				sd.updateStock(stock);
-				resp.sendRedirect("update/update_complete.jsp");
+				System.out.println(result);
+				if(result>=0){
+					stock.setCnt(result);
+					sd.updateStock(stock);
+					resp.sendRedirect("update/update_complete.jsp");
+				}
+				else{
+					String msg = "남은 재고량이 제거하려는 재고량보다 적습니다.";
+					req.setAttribute("msg", msg);
+					req.getRequestDispatcher("update/update_false.jsp").forward(req, resp);;
+				}
+					
 			}
 		}
-		else
-			resp.sendRedirect("update/update_false.jsp");
+		else{
+			String msg = "존재하지 않는 상품코드입니다.";
+			req.setAttribute("msg", msg);
+			req.getRequestDispatcher("update/update_false.jsp").forward(req, resp);;
+		}
 		
 	}
 
