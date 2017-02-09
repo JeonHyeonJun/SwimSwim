@@ -5,13 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>상품 삭제</title>
+<script type="text/javascript">
+	function check() {
+		if(document.frm.code.value.length != 4){
+			alert("상품코드는 4자리만 입력할 수 있습니다.");
+			document.frm.code.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
 </head>
 <body>
 <center>
 <h3>상품 삭제</h3><hr>
-<form action="<%=application.getContextPath() %>/delete">
+<form action="<%=application.getContextPath() %>/delete" name="frm">
 상품 코드 : <input type="text" name="code"><br>
-<input type="submit" value="확인">&nbsp;<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath() %>/main/main.jsp'">
+<input type="submit" value="확인" onclick="return check()">&nbsp;<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath() %>/main/main.jsp'">
 </form>
 </center>
 </body>

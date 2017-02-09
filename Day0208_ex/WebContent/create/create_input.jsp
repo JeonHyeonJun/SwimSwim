@@ -12,6 +12,11 @@
 			document.frm.code.focus();
 			return false;
 		}
+		else if(document.frm.code.value.length != 4){
+			alert("상품코드는 4자리만 입력할 수 있습니다.");
+			document.frm.code.focus();
+			return false;
+		}
 		else if(document.frm.name.value == ""){
 			alert("상품명을 입력하세요!");
 			document.frm.name.focus();
@@ -24,6 +29,11 @@
 		}
 		else if(isNaN(document.frm.cnt.value)){
 			alert("재고량은 숫자로 입력하세요!");
+			document.frm.cnt.focus();
+			return false;
+		}
+		else if(document.frm.cnt.value.length >3){
+			alert("재고량은 999까지 입력가능합니다.");
 			document.frm.cnt.focus();
 			return false;
 		}

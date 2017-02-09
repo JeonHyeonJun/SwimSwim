@@ -22,6 +22,11 @@
 			document.frm.cnt.focus();
 			return false;
 		}
+		else if(document.frm.cnt.value.length >3){
+			alert("재고량은 999까지 입력가능합니다.");
+			document.frm.cnt.focus();
+			return false;
+		}
 		return true;
 	}
 </script>
@@ -32,7 +37,7 @@
 	<h3>재고변경</h3><hr>
 		상품코드<input type="text" name="code"><br>
 		재&nbsp;고&nbsp;량&nbsp;<input type="text" name="cnt"><br>
-		<input type="radio" name="type" value="1">추가
+		<input type="radio" name="type" value="1" checked>추가
 		<input type="radio" name="type" value="2">제거<br>
 		<input type="submit" value="변경" onclick="return check()">
 		<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">

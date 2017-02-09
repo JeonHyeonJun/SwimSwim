@@ -9,8 +9,9 @@
 <body>
 <center>
 <h3>등록완료</h3><hr>
-	등록이 완료되었습니다.<br>
-	<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
+	등록이 완료되었습니다.<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'"><br>
+	<img src="<%= application.getContextPath()%>/img/good.jpg" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
+	
 	</center>
 </body>
 </html>

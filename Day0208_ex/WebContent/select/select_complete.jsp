@@ -16,6 +16,7 @@
 		List<Stock> list = (List)request.getAttribute("list");
 	%>
 	<h3>검색결과</h3><hr>
+	<img src="<%= application.getContextPath()%>/img/good.jpg" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
 	<table border="1">
 	<th>상품코드</th>
 	<th>상품명</th>

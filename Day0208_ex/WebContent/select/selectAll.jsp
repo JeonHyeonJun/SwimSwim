@@ -14,6 +14,7 @@
 %>
 <center>
 <h3>상품 전체 검색</h3><hr>
+<img src="<%= application.getContextPath()%>/img/good.jpg" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
 <table border="1">
 <tr>
 <th>코드</th>

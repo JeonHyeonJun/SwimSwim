@@ -28,7 +28,13 @@ public class CreateServlet extends HttpServlet{
 			req.setAttribute("msg", msg);
 			req.getRequestDispatcher("create/create_false.jsp").forward(req, resp);
 		}
-
+		
+		if(stock.getName().length()>10){
+			check=false;
+			String msg = "상품명은 10자이상 입력할수 없습니다";
+			req.setAttribute("msg", msg);
+			req.getRequestDispatcher("create/create_false.jsp").forward(req, resp);
+		}
 		StockDao sd = StockDao.getInstance();
 		List<Stock> list = sd.selectAll();
 		for(int i=0; i<list.size(); i++){

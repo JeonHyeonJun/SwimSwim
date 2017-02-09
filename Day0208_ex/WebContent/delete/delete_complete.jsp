@@ -15,8 +15,8 @@
 <%
 	out.println(msg);
 %>
-<br>
-<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
+<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'"><br>
+<img src="<%= application.getContextPath()%>/img/good.jpg" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
 </center>
 </body>
 </html>

@@ -7,8 +7,18 @@
 <title>상품검색</title>
 <script type="text/javascript">
 	function check() {
+		if(document.frm.code.value.length != 4){
+			alert("상품코드는 4자리만 입력할 수 있습니다.");
+			document.frm.code.focus();
+			return false;
+		}
 		if (isNaN(document.frm.cnt.value)) {
 			alert("재고량은 숫자로 입력하세요!");
+			document.frm.cnt.focus();
+			return false;
+		}
+		else if(document.frm.cnt.value.length >10){
+			alert("재고량은 10자리 이하 숫자만 검색 가능합니다.");
 			document.frm.cnt.focus();
 			return false;
 		}
@@ -28,7 +38,6 @@
 			<input type="radio" name="type" value="2">이하<br>
 			검색유형
 			<select name="select" size="1">
-				<option value="">검색유형을 선택하세요</option>
 				<option value="1">상품코드</option>
 				<option value="2">상품명</option>
 				<option value="3">재고량</option>

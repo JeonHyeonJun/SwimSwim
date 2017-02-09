@@ -37,9 +37,10 @@ public class DeleteServlet extends HttpServlet{
 			if(dao.selectCode(type) != null) {
 				stock.setCode(type);
 				dao.deleteStock(stock);
-				String msg = "삭제가 완료되었습니다.";
-				req.setAttribute("msg", msg);
-				req.getRequestDispatcher("/delete/delete_complete.jsp").forward(req, resp);
+//				String msg = "삭제가 완료되었습니다.";
+//				req.setAttribute("msg", msg);
+//				req.getRequestDispatcher("/delete/delete_complete.jsp").forward(req, resp);
+				resp.sendRedirect("selectall");
 			} else {
 				String msg = "존재하지 않는 상품 코드 입니다.";
 				req.setAttribute("msg", msg);

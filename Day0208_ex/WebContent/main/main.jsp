@@ -9,11 +9,16 @@
 <body>
 <center>
 <h3>상품재고관리</h3><hr>
-	<a href="<%=application.getContextPath() %>/create/create_input.jsp">상품 등록</a><br>
-	<a href="<%=application.getContextPath() %>/update/update_input.jsp">재고 수량 변경</a><br>
-	<a href="<%=application.getContextPath() %>/select/select_input.jsp">상품 검색</a><br>
-	<a href="<%=application.getContextPath() %>/selectall">상품 목록</a><br>
-	<a href="<%=application.getContextPath() %>/delete/delete_input.jsp">상품 제거</a><br>
+<table border="1">
+<tr>
+<td rowspan="5"><img src="<%= application.getContextPath()%>/img/main.jpeg"></td>
+	<td align="center"><a href="<%=application.getContextPath() %>/create/create_input.jsp">상품 등록</pre></a></td></tr>
+	<tr>
+	<td align="center"><a href="<%=application.getContextPath() %>/update/update_input.jsp">재고 수량 변경</a></td></tr>
+	<td align="center"><a href="<%=application.getContextPath() %>/select/select_input.jsp">상품 검색</a></td></tr>
+	<td align="center"><a href="<%=application.getContextPath() %>/selectall">상품 목록</a></td></tr>
+	<td align="center"><a href="<%=application.getContextPath() %>/delete/delete_input.jsp">상품 제거</a></td></tr>
+	</table>
 </center>
 </body>
 </html>
