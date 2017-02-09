@@ -86,6 +86,28 @@ public class StockDao {
 	
 }
 	
+	public void deleteStock(Stock stock) {
+		String sql = "delete from stock where code=?";
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setString(1, stock.getCode());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public Stock selectCode(String code){
 		String sql = "select * from stock where code=?";
 		PreparedStatement pstmt = null;
@@ -119,6 +141,76 @@ public class StockDao {
 		return stock;
 	}
 	
+	public List<Stock> selectName(String name){
+		String sql = "select * from stock where name=?";
+		List<Stock> list = new ArrayList<Stock>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Stock stock = null;
+		
+		try {
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				stock = new Stock();
+				stock.setCode(rs.getString("code"));
+				stock.setName(rs.getString("name"));
+				stock.setCnt(rs.getInt("cnt"));
+				list.add(stock);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null)
+					rs.close();
+				if(pstmt !=null)
+					pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+		return list;
+	}
+	
+	public List<Stock> selectCnt(int cnt){
+		String sql = "select * from stock where cnt=?";
+		List<Stock> list = new ArrayList<Stock>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Stock stock = null;
+		
+		try {
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setInt(1, cnt);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				stock = new Stock();
+				stock.setCode(rs.getString("code"));
+				stock.setName(rs.getString("name"));
+				stock.setCnt(rs.getInt("cnt"));
+				list.add(stock);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null)
+					rs.close();
+				if(pstmt !=null)
+					pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+		return list;
+	}
+	
 	public List<Stock> selectAll() {
 		List<Stock> list = new ArrayList<Stock>();
 		String sql = "select * from stock";
@@ -138,8 +230,17 @@ public class StockDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
+		} finally {
+			try {
+				if(rs!=null)
+					rs.close();
+				if(pstmt !=null)
+					pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
 		return list;
 	}
 	

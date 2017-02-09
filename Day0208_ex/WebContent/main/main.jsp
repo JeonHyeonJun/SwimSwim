@@ -12,7 +12,7 @@
 	<a href="<%=application.getContextPath() %>/create/create_input.jsp">상품 등록</a><br>
 	<a href="<%=application.getContextPath() %>/update/update_input.jsp">재고 수량 변경</a><br>
 	<a href="<%=application.getContextPath() %>/select/select_input.jsp">상품 검색</a><br>
-	<a href="<%=application.getContextPath() %>/select/selectAll_input.jsp">상품 목록</a><br>
+	<a href="<%=application.getContextPath() %>/selectall">상품 목록</a><br>
 	<a href="<%=application.getContextPath() %>/delete/delete_input.jsp">상품 제거</a><br>
 </center>
 </body>

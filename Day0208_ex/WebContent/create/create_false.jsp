@@ -7,11 +7,14 @@
 <title>등록완료</title>
 </head>
 <body>
+<center>
+<h3>등록실패</h3><hr>
 <%
 	String msg = (String)request.getAttribute("msg");
 %>
 	등록이 실패했습니다.<br>
 	<%=msg %><br>
 	<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
+	</center>
 </body>
 </html>

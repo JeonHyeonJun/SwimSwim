@@ -7,11 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
+<h3>변경실패</h3><hr>
 <%
 	String msg = (String)request.getAttribute("msg");
 %>
 	변경이 실패했습니다.<br>
 	<%=msg %><br>
 	<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
+	</center>
 </body>
 </html>

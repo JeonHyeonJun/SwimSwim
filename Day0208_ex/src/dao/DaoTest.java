@@ -7,9 +7,9 @@ public class DaoTest {
 		StockDao dao = StockDao.getInstance();
 		
 		Stock stock = new Stock();
-		stock.setCode("0001");
-		stock.setCnt(3);
-		System.out.println(dao.selectCode(stock.getCode()));
+		stock.setName("허니버터칩");
+		stock.setCnt(2);
+		System.out.println(dao.selectCnt(stock.getCnt()));
 //		dao.createStock(stock);
 //		dao.updateStock(stock);
 	}

@@ -4,13 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>등록완료</title>
+<title>재고 삭제 완료</title>
 </head>
 <body>
+<%
+	String msg = (String)request.getAttribute("msg");
+%>
 <center>
-<h3>등록완료</h3><hr>
-	등록이 완료되었습니다.<br>
-	<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
-	</center>
+<h3>재고 삭제</h3><hr>
+<%
+	out.println(msg);
+%>
+<br>
+<input type="button" value="돌아가기" onclick="location.href='<%=application.getContextPath()%>/main/main.jsp'">
+</center>
 </body>
 </html>
