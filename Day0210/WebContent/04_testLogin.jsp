@@ -13,7 +13,7 @@
 	==연산자 사용결과 : <%=request.getParameter("id") == "pinkgay" %><br><br>
 	
 	당신이가 입력한 정보입니다. (세련(EL))<hr>
-	아이디 : ${param.id }<br>
+	아이디 : ${param.id }<br> 
 	비밀번호 : ${param["pwd"] }<br>
 	==연산자 사용결과 : ${param.id =="pinkgay"}
 	

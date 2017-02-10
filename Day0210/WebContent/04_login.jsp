@@ -7,7 +7,7 @@
 <title>로그인또와따</title>
 </head>
 <body>
-	<form action="04_testLogin.jsp" method="get">
+	<form action="04_testLogin.jsp" method="get"> 
 	아이디 : <input type="text" name="id"><br>
 	암&nbsp;&nbsp;호 :  <input type="text" name="pwd"><br>
 	<input type="submit" value="로그인">
