@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 	선택항목<hr>
 	<c:forEach var="item" items="${paramValues.item}" varStatus="status">
 		${item} <c:if test="${not status.last}">, </c:if>

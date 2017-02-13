@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 	<h2>악세서리</h2>
 	관심법을 선택하세요<hr>
 	
