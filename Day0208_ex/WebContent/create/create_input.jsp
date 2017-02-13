@@ -42,6 +42,13 @@
 </script>
 </head>
 <body>
+	<%
+		session.getAttribute("id");
+	
+	if(session.getAttribute("id") == null){
+		response.sendRedirect("../main/main.jsp");
+	}
+	%>
 	<form action="../create" method="get" name="frm">
 	<center>
 	<h3>상품등록</h3><hr>

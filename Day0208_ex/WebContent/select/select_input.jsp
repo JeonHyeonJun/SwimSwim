@@ -7,11 +7,6 @@
 <title>상품검색</title>
 <script type="text/javascript">
 	function check() {
-		if(document.frm.code.value.length != 4){
-			alert("상품코드는 4자리만 입력할 수 있습니다.");
-			document.frm.code.focus();
-			return false;
-		}
 		if (isNaN(document.frm.cnt.value)) {
 			alert("재고량은 숫자로 입력하세요!");
 			document.frm.cnt.focus();

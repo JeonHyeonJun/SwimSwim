@@ -11,7 +11,7 @@
 <h3>상품재고관리</h3><hr>
 <table border="1">
 <tr>
-<td rowspan="5"><img src="<%= application.getContextPath()%>/img/main.jpeg"></td>
+<td rowspan="5"><img src="<%= application.getContextPath()%>/img/main.jpeg" onclick="location.href='<%=application.getContextPath() %>/session'"></td>
 	<td align="center"><a href="<%=application.getContextPath() %>/create/create_input.jsp">상품 등록</pre></a></td></tr>
 	<tr>
 	<td align="center"><a href="<%=application.getContextPath() %>/update/update_input.jsp">재고 수량 변경</a></td></tr>
