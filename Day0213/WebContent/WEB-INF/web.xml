@@ -20,4 +20,13 @@
   	<servlet-name>WhatTime</servlet-name>
   	<url-pattern>/whatTime</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>MemberList</servlet-name>
+  	<servlet-class>servlet.MemberListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MemberList</servlet-name>
+  	<url-pattern>/MemberList</url-pattern>
+  </servlet-mapping>
 </web-app>
