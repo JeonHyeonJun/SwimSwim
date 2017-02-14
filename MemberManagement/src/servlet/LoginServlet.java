@@ -21,7 +21,13 @@ public class LoginServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		super.doGet(req, resp);
-		req.getRequestDispatcher("member/login.jsp").forward(req, resp);
+		String url = "member/login.jsp";
+		
+		HttpSession session = req.getSession();
+		
+		if(session.getAttribute("loginUser") != null)
+			url = "main.jsp";
+		req.getRequestDispatcher(url).forward(req, resp);
 	}
 
 	@Override

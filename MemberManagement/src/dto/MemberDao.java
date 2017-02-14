@@ -178,4 +178,37 @@ public class MemberDao {
 		}
 		return result;		
 	}
+	
+	//회원정보변경
+	public int updateMember(Member member){
+		int result = -1;
+		String sql = "update member set pwd=?, email=?, phone=?, admin=? where userid=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getPwd());
+			pstmt.setString(2, member.getEmail());
+			pstmt.setString(3, member.getPhone());
+			pstmt.setInt(4, member.getAdmin());
+			pstmt.setString(5, member.getUserid());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;	
+	}
 }
