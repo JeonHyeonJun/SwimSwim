@@ -14,7 +14,7 @@ import dto.MemberDao;
 
 @WebServlet("/join.do")
 public class JoinSevlet extends HttpServlet{
-	private static final long SerialVersionUIDAdder = 1L;
+	private static final long SerialVersionUID = 1L;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
