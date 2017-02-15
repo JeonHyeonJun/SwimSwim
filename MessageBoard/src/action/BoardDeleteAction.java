@@ -1,0 +1,26 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.BoardDao;
+import model.Board;
+
+public class BoardDeleteAction implements Action{
+
+	@Override
+	public void excute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String num = req.getParameter("num");
+		
+		
+		BoardDao bd = BoardDao.getInstance();
+		bd.deleteBoard(num);
+		
+		new BoardListAction().excute(req, resp);
+	}
+
+}
