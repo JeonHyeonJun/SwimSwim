@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var ok = document.getElementById("ok");
+		var select = document.getElementById("select");
+		ok.addEventListener('click', function() {
+			
+			//select라는 id를 가진 요소노드의 현재 선택된 option값 접근하기
+			var value = select.options[select.selectedIndex].value;
+			var text = select.options[select.selectedIndex].text;
+//			alert(value + ' : ' + text);
+ 			
+ 
+			//이 버튼이 눌렸을때 우리 서버의 ajaxText.do에 요청 보내기
+			//1. XMLHttpRequest 객체 생성
+			var req = new XMLHttpRequest();
+ 			//2. open메소드를 이용해 url 지정
+//			req.open('get', 'ajaxTest.do?param1='+value+'&param2='+encodeURI(text));	//get방식으로 보내기
+			req.open('post', 'ajaxTest.do');
+ 			//3. 응답을 받을때 수행할 메소드 지정
+ 			req.onreadystatechange = function(){
+ 				if(req.readyState == 4 && req.status == 200){
+//					alert(req.responseText);
+//					result.innerHTML = req.responseText;
+					/* var result = req.responseText.split(',');	//split메소드는 문자열을 파라미터의 기호로 쪼개서 배열에 넣어줌
+					
+					var result1 = result[0]==1 ?'가위' : (result[0]==2 ?'바위' : '보');
+					var result2 = result[1]==1 ?'짐' : (result[1]==2 ?'이김' : '비김');
+					var result3 = result[1]==1 ?'<img width="300px" height="300px" src="img/sad.jpg">' 
+							: (result[1]==2 ?'<img width="300px" height="300px" src="img/good.jpg">' 
+							: '<img width="300px" height="300px"src="img/digital.GIF">');
+					vs1.innerHTML = result1;
+					vs2.innerHTML = result2;
+					vs3.innerHTML = result3; */
+					
+					//XML로 읽기?
+					/* var result = req.responseXML;
+					var serverSelect = result.getElementsByTagName("serverSelect");
+					var compareResult = result.getElementsByTagName("compareResult");
+					alert(serverSelect[0].childNodes[0].nodeValue);
+					alert(compareResult[0].childNodes[0].nodeValue);  */
+					
+					//JSON으로 읽기?
+					var results = JSON.parse(req.responseText);
+					alert(results.result.serverSelect);
+					alert(results.result.compareResult);
+ 				}
+ 			};
+ 			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+ 			//4. 전송
+ 			req.send("param1="+value);
+		});
+	};
+</script>
+</head>
+<body>
+	<center>
+	<select id="select">
+		<option value="1">가위</option>
+		<option value="2">바위</option>
+		<option value="3">보</option>
+	</select>
+	<button id="ok">확인</button><br>
+	<h1><span id="vs1"></span><br><span id="vs2"></span><br><span id="vs3"></span></h1>
+	</center>
+</body>
+</html>
