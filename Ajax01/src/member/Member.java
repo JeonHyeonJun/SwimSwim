@@ -7,7 +7,7 @@ public class Member {
 	
 	public static String getName() {
 		return name;
-	}
+	} 
 	public static void setName(String name) {
 		Member.name = name;
 	}

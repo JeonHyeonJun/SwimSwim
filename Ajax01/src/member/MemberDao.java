@@ -57,12 +57,12 @@ public class MemberDao {
 		}
 	}
 	
-	public List<Member> selectAll(){
+	public Member selectOne(String id){
 		String sql = "select * from member";
 		Connection con = null;
+		Member member = null;
 		PreparedStatement pst = null;
 		ResultSet rs = null;
-		List<Member> list = new ArrayList<Member>();
 		
 		try {
 			con = getConnection();
@@ -70,17 +70,21 @@ public class MemberDao {
 			rs = pst.executeQuery();
 			
 			while(rs.next()){
-				Member member = new Member();
-				member.setName(rs.getString(1));
-				member.setId(rs.getString(2));
-				member.setPass(rs.getString(3));
-				list.add(member);
+				if(id.equals(rs.getString(2))){
+					member = new Member();
+					member.setName(rs.getString(1));
+					member.setId(rs.getString(2));
+					member.setPass(rs.getString(3));
+					return member;
+				}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
+				if(con != null)
+					con.close();
 				if(pst != null)
 					pst.close();
 				if(rs != null)
@@ -90,6 +94,48 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 		}
-		return list;
+		return member;
 	}
+	
+	public Member selectName(String name){
+		String sql = "select * from member";
+		Connection con = null;
+		Member member = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		
+		try {
+			con = getConnection();
+			pst = con.prepareStatement(sql);
+			rs = pst.executeQuery();
+			
+			while(rs.next()){
+				if(name.equals(rs.getString(1))){
+					member = new Member();
+					member.setName(rs.getString(1));
+					member.setId(rs.getString(2));
+					member.setPass(rs.getString(3));
+					return member;
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if(con != null)
+					con.close();
+				if(pst != null)
+					pst.close();
+				if(rs != null)
+					rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return member;
+	}
+	
+	
 }
