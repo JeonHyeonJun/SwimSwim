@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#content{
+		width: 1024px;
+		height: 768px;
+		background-image: url('img/bg.jpg');
+	}
+	#footer{
+		width: 1024px;
+		height: 100px;
+		background-image: url("img/dog.gif");
+		background-size: 50%;
+	}
+	#die{
+		position: absolute;
+		left : 460px;
+		top: 677px;
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var die = document.getElementById("die");
+		for(var i=1; i<=9; i++){
+			var div = document.createElement("div");
+			div.style.width = "31px";
+			div.style.height = "31px";
+			div.style.background = "red";
+			div.style.border = "1px solid black";
+			div.style.float = "left";
+			die.appendChild(div);
+		}
+		
+		var words = ["이길선", "권록헌", "고석현", "조우열", "배성수" , "한조", "두조", "세조", "4조", "오죠"];	
+		var wordspan = [];
+ 		for(var i=0; i<words.length; i++){
+			var random = parseInt(Math.random()*10);
+			wordspan[i] = document.createElement("span");
+			wordspan[i].innerHTML = words[i];
+			wordspan[i].style.position = "absolute";
+			wordspan[i].style.top = "10px";
+			wordspan[i].style.left = 100 + (i * 90) + "px";
+			wordspan[i].style.margin = "10px";
+			wordspan[i].style.background = "#ffffff";
+			content.appendChild(wordspan[i]);
+		} 
+		var start = document.getElementById("start");
+		var end = document.getElementById("end");
+		var interval = null;
+ 		var randomTop = [];
+		for(var i = 0; i < wordspan.length; i++)
+			randomTop[i] = parseInt((Math.random()*30)+1);
+		start.onclick = function(){
+			if(interval == null){
+			 	interval = setInterval(function() {
+			 		
+			 		
+				for(var i = 0; i < wordspan.length; i++)
+				{
+					
+					var currentTop = parseInt(wordspan[i].style.top);
+					wordspan[i].style.top = (currentTop + randomTop[i]) + 'px';
+					
+					if(currentTop >= 750){
+						div.style.background = "white";
+						content.removeChild(wordspan[i]);
+					}
+				}
+				
+			}, 50);
+			}
+		}
+		
+		
+		
+		end.onclick = function(){
+			clearInterval(interval);
+			interval = null;
+		}
+		
+/* 		for(var i = 0; i < words.length; i++)
+		{
+			wordspan[i] = document.createElement('span');
+			wordspan[i].innerHTML = words[i];
+			wordspan[i].style.position = 'absolute';
+			wordspan[i].style.top = '10px';
+			wordspan[i].style.left = 100 + (i * 90) + 'px';
+// 			wordspan[i].style.margin = '10px';
+			wordspan[i].style.background = '#ffffff';
+			content.appendChild(wordspan[i]);
+		} */
+		
+		
+		
+		
+		
+		var input = document.getElementById("input");
+		input.onkeydown = function(){
+			if(event.keyCode == 13){
+				var result = input.value;
+				for(var i=0; i<words.length; i++){
+					if(result == words[i]){
+						content.removeChild(wordspan[i]);
+						input.value = "";
+					}
+				}
+			}
+		}
+		
+		/*  setInterval(function() {		
+			var random = parseInt(Math.random()*10);
+			var text = words[random];
+			var randomLeft = parseInt((Math.random()*900)+100);
+			wordspan[random] = document.createElement("span");
+			wordspan[random].innerHTML = text;
+			wordspan[random].style.position = "absolute";
+			wordspan[random].style.top = "10px";
+			wordspan[random].style.left = randomLeft + "px";
+			wordspan[random].style.margin = "10px";
+			wordspan[random].style.background = "#ffffff";
+			content.appendChild(wordspan[random]);		
+		}, 1000);
+		 */
+	}
+	
+</script>
+</head>
+<body>
+	<div id="content"><div id="die"></div></div>
+	<div id="footer"><center><input type="text" id="input"><input type="button" value="시작" id="start"><input type="button" value="정지" id="end"></center></div>
+	
+</body>
+</html>
