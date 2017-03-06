@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#ball{	
+		position: absolute;
+		left: 100px;
+		top: 100px;
+/*		transform: rotate(100deg);	*/
+	}
+	#goal{
+		position: absolute;
+		left: 700px;
+		top: 100px;
+	}
+</style>
+<script type="text/javascript">
+
+function hitTest(me, target) {	// span이나 div를 me 와 target에 매개변수로 지정.
+	var meStyle = window.getComputedStyle(me);
+	var targetStyle = window.getComputedStyle(target);
+	 me_x= parseInt(meStyle.left);		// x좌표
+	 me_y= parseInt(meStyle.top);	// y좌표
+	 me_width=parseInt(meStyle.width);
+	 me_height=parseInt(meStyle.height);
+	 target_x= parseInt(targetStyle.left);	// x 좌표
+	 target_y= parseInt(targetStyle.top);	// y 좌표
+	 target_width=parseInt(targetStyle.width);
+	 target_height=parseInt(targetStyle.height);
+	 //나의 x좌표위치가 타겟의 x range 내에 있는지 판단 
+	 // 내물체 x축 시작점이 상대물체 x축 시작점을 겹치거나 넘어서고, 내 x축 시작점이 상대물체 x축 시작점부터 너비의 범위안에 들어가는지 판단.
+	 var result1=(me_x >= target_x) && (me_x <= (target_x+target_width));
+	 
+	 //나의 가로폭이 타겟의 가로폭 내에 있는지 판단
+	// 내 x축 시작점부터 내 너비를 더한값이 상대물체 x축의 시작점과 겹치거나 넘어서고, 내 x축 시작점부터 내 너비의 범위가 상대x축 시작값부터 너비의 끝까지의 범위안에 들어가는지.
+	 var result2=(me_x+me_width >= target_x) && (me_x+me_width <= (target_x+target_width));
+	 
+	 var result3=(me_y >= target_y) && (me_y <= (target_y+target_height));//나의 y좌표위치가 타겟의 세로폭 내에 있는지 판단
+	 var result4=(me_y+me_height >= target_y) && (me_y+me_height <= (target_y+target_height));//나의 y폭이 타겟의 세로폭 내에 있는지 판단
+	  
+	 return (result1 || result2) && (result3 || result4);	// 충돌시 true를 반환.
+}
+
+	function Ball(img){
+		this.img = img;
+		this.x = 100;
+		this.deg = 0;
+		this.start = 100;
+		this.end = 700;
+		this.step = 10;
+		this.isrunning = false;
+		
+		this.stop = function(){
+			clearInterval(interval);
+			this.isrunning = false;
+		};
+		
+		this.move = function(){
+			var goal = document.getElementById("goal");
+			var me = this;
+				interval = setInterval(function() {
+				if(me.x < me.start || hitTest(me.img, goal)){
+					me.step *= -1;
+				}
+				
+				me.x += me.step;
+				me.deg += me.step;
+				me.img.style.left = me.x+"px";
+				me.img.style.transform = "rotate("+me.deg+"deg)";
+				
+				
+				/* var myX = me.x;
+				var myWidth = parseInt(me.img.width);
+				
+				if(myX + myWidth == 700){
+					alert("☆공허의유산☆♚♚히어로즈 오브 더 스☆톰♚♚가입시$$전원 카드팩☜☜뒷면100증정※ ♜월드오브 워크래프트♜펫 무료증정￥ 특정조건 §§디아블로3§§★공허의 유산★초상화획득기회@@@");
+					me.stop();
+				} */
+				
+				if(hitTest(me.img, goal)){
+					alert("☆공허의유산☆♚♚히어로즈 오브 더 스☆톰♚♚가입시$$전원 카드팩☜☜뒷면100증정※ ♜월드오브 워크래프트♜펫 무료증정￥ 특정조건 §§디아블로3§§★공허의 유산★초상화획득기회@@@");
+					//me.stop();
+				}
+			}, 10);
+			this.isrunning = true;
+		};
+		
+		
+	}
+	
+	window.onload = function(){
+		var i = 0;
+		var img = document.getElementById("ball");
+		var ball = new Ball(img);
+		ball.move();
+		
+		var body = document.getElementById("body");
+		
+		
+		body.onkeydown = function(){
+			if(event.keyCode == 32){
+				if(ball.isrunning)
+					ball.stop();
+				else
+					ball.move();
+			}
+		}
+	} 		
+</script>
+</head>
+<body id="body">
+	<img src="img/bing.gif" width="150dp" height="150dp" id="ball">
+	<img src="img/hos.gif" width="150dp" height="150dp" id="goal">
+</body>
+</html>
