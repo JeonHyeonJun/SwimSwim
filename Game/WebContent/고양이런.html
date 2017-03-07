@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./cat.js"></script>
+<script src="./flower.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		var score = document.getElementById("score");
+		var speed = 0;
+		score.value = 0;
+		setInterval(function() {
+			score.innerHTML = score.value;
+			score.value++;
+		}, 100)
+		
+		var flowers = [];
+		//배경
+		var content = document.getElementById('content');
+		content.style.width = '100%';
+		content.style.height = '493px';
+		content.style.backgroundImage = "url('./img/Land.png')";
+		var xx = 0;
+		setInterval(function() {
+			xx -= 10+(speed*5);
+			content.style.backgroundPosition = xx + 'px';
+		}, 10);
+
+		//장애물
+
+		setInterval(function() {
+			var ran = parseInt(Math.random() * 2);
+			
+			if (ran == 0) {
+				var flower = new Flower(content, 1200, 400, 100, 100, "./img/flower.png");
+			}
+			if (ran == 1) {
+				var flower = new Flower(content, 1200, 400, 100, 100, "./img/flower2.png");
+			}
+			if(score.value%100 == 0){
+				speed = score.value/100;
+			}
+			flower.init();
+			flower.stepX = -(speed*5)-10;
+			flower.move();
+			flowers.push(flower);
+		}, 2000);
+
+		var posX = 10;
+		var posY = 400;
+		var cat = new Cat(content, posX, posY, 33 * 2, 31 * 2, flowers);
+		cat.init();
+		cat.move();
+
+		window.addEventListener("keydown", function(e) {
+			if (event.keyCode == 32) {
+				cat.stepY = -5;
+				if (cat.posY == posY) {
+					cat.jump();
+				}
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div id="content">점수<span id="score"></span></div>
+</body>
+</html>
