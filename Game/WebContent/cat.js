@@ -70,7 +70,7 @@ function Cat(parant, posX, posY, width, height, flowers){
 		
 		setTimeout(function() {
 			me.move();
-		}, 10);
+		}, 50);
 		
 		for(var i=0; i<flowers.length; i++){
 			var result = hitTest(this.span, flowers[i].span);
