@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 <script src="./cat.js"></script>
 <script src="./flower.js"></script>
+<script src="./item.js"></script>
 <script type="text/javascript">
 		
 
@@ -13,11 +14,12 @@
 		var speed = 0;
 		score.value = 0;
 		setInterval(function() {
-			score.innerHTML = score.value;
-			score.value++;
+			score.innerHTML = parseInt(cat.score);
+//			score.value++;
 		}, 100)
 		
 		var flowers = [];
+		var items = [];
 		//배경
 		var content = document.getElementById('content');
 		content.style.width = '100%';
@@ -25,18 +27,18 @@
 		content.style.backgroundImage = "url('./img/Land.png')";
 		var xx = 0;
 		setInterval(function() {
-			xx -= 10+(speed*5);
+			xx -= 10+(speed*3);
 			content.style.backgroundPosition = xx + 'px';
 		}, 10);
 
 		//장애물
-		var randomSecond = parseInt((Math.random()*2000)+1000);
-		
-		function flower(){
+		var flo = function(){
+
+			var randomSecond = parseInt((Math.random()*1000)+800);
 			var ran = parseInt(Math.random() * 3);
-			
+			var me = this;
 			if (ran == 0) {
-				var flower = new Flower(content, 1200, 400, 100, 100, "./img/flower.png");
+				var flower = new Flower(content, 1200, 400, 70, 100, "./img/flower.png");
 			}
 			if (ran == 1) {
 				var flower = new Flower(content, 1200, 400, 100, 100, "./img/flower2.png");
@@ -44,30 +46,44 @@
 			if (ran == 2){
 				var flower = new Flower(content, 1200, 300, 150, 50, "./img/misile.png");
 			}
-			if(score.value%100 == 0){
-				speed = score.value/100;
-			}
+				speed += 0.1;
 			flower.init();
-			flower.stepX = -(speed*5)-10;
+			flower.stepX = -(speed*3)-10;
 			flower.move();
 			flowers.push(flower);
 			setTimeout(function() {
-				flower();
+				flo();
 			}, randomSecond);
-		}
-			flower();
+		};
+			flo();
+			
+			
+			
+			var it = function(){
+				var randomItem = parseInt((Math.random()*10000)+8000);
+				var item = new Item(content, 1200, 400, 100, 100, "./img/item.png");
+				item.init();
+				item.stepX = -(speed*3)-10;
+				item.move();
+				items.push(item);
+				setTimeout(function() {
+					it();
+				}, randomItem);
+			};
+			it();
+			
 		
 
 		var posX = 10;
 		var posY = 400;
-		var cat = new Cat(content, posX, posY, 33 * 2, 31 * 2, flowers);
+		var cat = new Cat(content, posX, posY, 33 * 2, 31 * 2, flowers, items);
 		cat.init();
 		cat.move();
 
 		window.addEventListener("keydown", function(e) {
 			if (event.keyCode == 32) {
 				cat.stepY = -5;
-				if (cat.posY == posY) {
+				if (cat.posY == posY && cat.span.style.width == 66+"px") {
 					cat.jump();
 				}
 			}
@@ -76,7 +92,7 @@
 </script>
 </head>
 <body>
-	<audio src="./audio/seok.mp3" autoplay="autoplay"></audio>
+	<audio src="./audio/nam.mp3" autoplay="autoplay"></audio>
 	<div id="content">점수<span id="score"></span></div>
 </body>
 </html>

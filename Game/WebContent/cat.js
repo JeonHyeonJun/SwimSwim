@@ -27,13 +27,13 @@ function hitTest(me, target) {	// span이나 div를 me 와 target에 매개변�
 }
 
 
-function Cat(parant, posX, posY, width, height, flowers){
+function Cat(parant, posX, posY, width, height, flowers, items){
 	this.parant = parant;	//배가 위치할 부모
 	this.posX = posX;
 	this.posY = posY;
 	this.width = width;
 	this.height = height;
-	
+	this.score = 0;
 	//배가 사용할 이미지, 스판, 이동거리
 	this.img;
 	this.span;
@@ -59,6 +59,7 @@ function Cat(parant, posX, posY, width, height, flowers){
 		this.span.appendChild(this.img);
 		this.parant.appendChild(this.span);
 		time = 0;
+		score = 0;
 	};
 	
 	this.move = function(){
@@ -70,13 +71,34 @@ function Cat(parant, posX, posY, width, height, flowers){
 		
 		setTimeout(function() {
 			me.move();
+			me.score += 0.5;
 		}, 50);
 		
 		for(var i=0; i<flowers.length; i++){
 			var result = hitTest(this.span, flowers[i].span);
 			if(result){
-					alert("유다희");
+					alert("유다희 점수: "+parseInt(me.score));
+					var name = prompt("이름을 입력하세여");
 					document.location.reload();
+			}
+		}	
+		
+		for(var i=0; i<items.length; i++){
+			var result = hitTest(this.span, items[i].span);
+			if(result){
+					this.parant.removeChild(items[i].span);
+					this.span.style.width = 300 + "px";
+					this.span.style.height = 500 + "px";
+					this.img.style.width = 300 + "px";
+					this.img.style.height = 300 + "px";
+					this.span.style.top = 170 + "px";
+					setTimeout(function() {
+						me.span.style.width = 66 + "px";
+						me.span.style.height = 62 + "px";
+						me.img.style.width = 66 + "px";
+						me.img.style.height = 62 + "px";
+						me.span.style.top = 400 + "px";
+					}, 2000);
 			}
 		}	
 	};
@@ -90,7 +112,7 @@ function Cat(parant, posX, posY, width, height, flowers){
 			this.span.style.top = this.posY + "px";
 			setTimeout(function() {
 				me.jump();
-			}, 10);
+			}, 7);
 		}
 		else if(time<60){
 			time++;
@@ -98,7 +120,7 @@ function Cat(parant, posX, posY, width, height, flowers){
 			this.span.style.top = this.posY + "px";
 			setTimeout(function() {
 				me.jump();
-			}, 10);
+			}, 7);
 		}
 		else{
 			time = 0;
