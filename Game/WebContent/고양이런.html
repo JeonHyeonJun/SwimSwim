@@ -57,8 +57,6 @@
 		};
 			flo();
 			
-			
-			
 			var it = function(){
 				var randomItem = parseInt((Math.random()*10000)+8000);
 				var item = new Item(content, 1200, 400, 100, 100, "./img/item.png");
@@ -70,7 +68,9 @@
 					it();
 				}, randomItem);
 			};
-			it();
+			setTimeout(function() {
+				it();
+			}, 10000);
 			
 		
 
@@ -92,7 +92,6 @@
 </script>
 </head>
 <body>
-	<audio src="./audio/nam.mp3" autoplay="autoplay"></audio>
 	<div id="content">점수<span id="score"></span></div>
 </body>
 </html>

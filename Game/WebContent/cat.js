@@ -56,6 +56,11 @@ function Cat(parant, posX, posY, width, height, flowers, items){
 		this.img.style.width = this.width + "px";
 		this.img.style.height = this.height + "px";
 		
+		this.audio = document.createElement("audio");
+		this.audio.src = "./audio/default.mp3";
+		this.audio.autoplay="autoplay"; 
+		this.audio.loop="loop";
+		
 		this.span.appendChild(this.img);
 		this.parant.appendChild(this.span);
 		time = 0;
@@ -74,8 +79,10 @@ function Cat(parant, posX, posY, width, height, flowers, items){
 			me.score += 0.5;
 		}, 50);
 		
+		
 		for(var i=0; i<flowers.length; i++){
 			var result = hitTest(this.span, flowers[i].span);
+			
 			if(result){
 					alert("유다희 점수: "+parseInt(me.score));
 					var name = prompt("이름을 입력하세여");
@@ -86,13 +93,18 @@ function Cat(parant, posX, posY, width, height, flowers, items){
 		for(var i=0; i<items.length; i++){
 			var result = hitTest(this.span, items[i].span);
 			if(result){
+					this.audio.src = "./audio/item.mp3";
 					this.parant.removeChild(items[i].span);
+					time = 60;
 					this.span.style.width = 300 + "px";
 					this.span.style.height = 500 + "px";
 					this.img.style.width = 300 + "px";
 					this.img.style.height = 300 + "px";
 					this.span.style.top = 170 + "px";
 					setTimeout(function() {
+						me.audio.src = "./audio/default.mp3";
+						time = 0;
+						me.posY = 400;
 						me.span.style.width = 66 + "px";
 						me.span.style.height = 62 + "px";
 						me.img.style.width = 66 + "px";
