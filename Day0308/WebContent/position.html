@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.box{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+	}
+	
+	.red{
+		background-color: red;
+		left: 10px; top: 10px;
+		z-index: 3;	/* 위치조정. 높을수록 맨앞 */
+	}
+	
+	.blue{
+		background-color: blue;
+		left: 50px; top: -10px;
+		z-index: 3;
+	}
+	
+	.green{
+		background-color: green;
+		left: 90px; top: 10px;
+		z-index: 1;
+	}
+	#container{
+		background-color: pink;
+		height: 100px;
+		position: relative;
+		overflow: hidden;	/* 넘쳤을때 하는행동: scroll로 보여주거나 hidden으로 안보이게함*/
+
+	}
+	#bing{
+		float: right;
+	}
+</style>
+</head>
+<body>
+	<h1>Mystia Lorellai</h1>
+	<div id="container">
+		<div class="box red"></div>
+		<div class="box blue"></div>
+		<div class="box green"></div>
+	</div>
+	<img src="img/bing.gif" id="bing">
+	<h1>Mystia Lorellai</h1>
+</body>
+</html>

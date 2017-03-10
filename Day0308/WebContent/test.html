@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box{
+		display: inline-block;	/* 영역유형 block은 너비가 100% inline은 자기가 사용한 만큼만 */
+		background-color: pink;
+		visibility: visible;	/* 다크템플러만들기 */
+		opacity: 0.5;	/* 투명도 */
+		
+		width: 100px;
+		height: 100px;
+		margin: 0 10px;	/* 다른놈과의 거리 */
+		padding: 0 30px;	/* 내용물을 안으로 밀어넣음 */		
+	}
+	#button{
+		border: thick dashed black;	/* 테두리 설정 */
+		border-radius: 20px;
+	}
+	#one{
+		border-radius: 10px;	/* 둥글게둥글게 */
+	}
+	td{
+		visibility: hidden;
+	}
+	#one1{
+		width: 100px;
+		height: 100px;
+		background-image: url("./img/bing.gif");
+		background-size: 50%; 
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+	}
+</style>
+</head>
+<body>
+	<span>Dummy</span>
+	<div id="box">
+		<span>Lorem ipsum</span>
+	</div>
+	<div id="button">
+		<button id="one">게임시작</button>
+	</div>
+	<div id="one1"></div>
+	<span>Dummy</span>
+	<table border="1">
+		<tr>
+			<td>123</td><td>123</td><td>123</td>
+		</tr>
+		<tr>
+			<td>123</td><td>123</td><td>123</td>
+		</tr>
+		<tr>
+			<td>123</td><td>123</td><td>123</td>
+		</tr>
+	</table>
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	Source 엘리먼트는 Audio/Video 엘리먼트에서 불러올 음악파일을 지정해주는 엘리먼트입니다. 이 엘리먼트는 Audio/Video 엘리먼트에 종속적인 엘리먼트로서, 다중으로 중복하여 사용할 수 있습니다.
+이 엘리먼트에 음악파일의 주소와 형식을 입력해놓으면, 브라우저에서 해당 미디어 타입을 자신이 지원하는지를 판단하여 로드합니다. 예로 들어, ‘type’이 "audio/mpeg"인 source와, "audio/ogg"인 source를 작성했다고 가정합시다. 만약 이 페이지를 ‘Firefox’에서 로드한다면, ‘type’이 "audio/ogg"인 source를 찾아 Audio를 재생할 것입니다. 여기서 ‘type’이 "auido/ogg"인 source가 없다면, ‘Firefox’에서 Audio는 재생 불가능한 엘리먼트로 인식합니다.
+물론 Source 엘리먼트 없이 Audio 엘리먼트만 사용하여 파일을 로드할 수는 있지만, 원할한 크로스 브라우징을 위해서는 Source 엘리먼트를 사용하여 MP3, OGG 두 개의 파일을 링크시켜주는 것이 바람직하다고 볼 수 있습니다.
+	
+</body>
+</html>
