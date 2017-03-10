@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>뿅뿅오락실</title>
+<style type="text/css">
+	#content{
+		width: 1000px;
+		height: 850px;
+		background: pink;
+	}
+</style>
+<script src="./ship.js"></script>
+<script src="./bullet.js"></script>
+<script src="./enermy.js"></script>
+<script src="./enermybullet.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var flys = [];
+		var posX = 1000/2 - 31;	//정 가운데에서 비행기 반만큼 왼쪽으로 더
+		var posY = 850 - 33*2 - 20;	//위아래 크기에서 비행기만큼의 위로올리고 20더
+		var ship = new Ship(content, posX, posY, 31*2, 33*2);
+		ship.init();
+		ship.move();
+		
+		
+		
+		for(var i=0; i<5; i++){
+			var bk = new Enermy(content, i*100+30, 10, 31*2, 33*2, 2, "./img/blue_king.png");
+			bk.init();
+			var gk = new Enermy(content, i*100+530, 10, 31*2, 33*2, 2, "./img/green_king.png");
+			gk.init();
+			flys.push(bk);
+			flys.push(gk);
+		}
+		for(var i=0; i<20; i++){
+			var enermy1 = new Enermy(content, i*50+20, 100, 31, 33, 1, "./img/enermy1.png");
+			enermy1.init();
+			var enermy2 = new Enermy(content, i*50+20, 150, 31, 33, 1, "./img/enermy2.png");
+			enermy2.init();
+			flys.push(enermy1);
+			flys.push(enermy2);
+		}
+		
+		window.addEventListener("keydown", function(e) {
+			//alert(event.keyCode);
+			switch(event.keyCode){
+			case 32:
+				var bullet = new Bullet(content, ship.posX+ship.width/2, ship.posY, 7, 17, flys, "./img/bullet.png", 1);
+				bullet.init();
+				bullet.move();
+				bullet.stepY = -20;
+				break;
+			case 37:
+				ship.stepX = -5;
+				break;
+			case 39:
+				ship.stepX = 5;
+				break;
+			case 192:
+				alert("필살기!");
+				var bullet = new Bullet(content, ship.posX+ship.width/2, ship.posY, 30, 30, flys, "./img/bing.gif", 2);
+				bullet.init();
+				bullet.move();
+				bullet.stepY = -3;
+				break;
+			}
+		});
+		
+		window.addEventListener("keyup", function(e) {
+			var key = event.keyCode;
+			if(key == 37 || key == 39){
+				ship.stepX = 0;
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div id="content"></div>
+</body>
+</html>
