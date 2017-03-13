@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>라디오버튼</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+			var date = new Date();
+			var year = date.getFullYear();
+			alert(year.s);
+		$('#num1').on('blur',function(){
+			var num1 = $(this).val().slice(0, 2);
+			//99~17
+			if( num1 >=99 || num1<=17){
+				$('#age[value=미자]').prop('checked',true);
+			}
+			else{
+				$('#age[value=성인]').prop('checked',true);
+			}
+		}).on('keyup',function(){
+			if($(this).val().length == 6){
+				$('#num2').focus();
+			}	
+		});
+		
+		$('#num2').blur(function(){
+			var num2 = $(this).val().slice(0,1);
+			if( num2 == 1){
+				$('#sex[value=남]').prop('checked',true);
+			}
+			else if(num2 == 2){
+				$('#sex[value=여]').prop('checked',true);
+			}
+			else{
+				$('#sex[value=남]').prop('checked',false);
+				$('#sex[value=여]').prop('checked',false);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	주민번호 : <input type="text" id="num1"> - <input type="text" id="num2">
+	<p>
+	성별: <input type="radio" id="sex" name="sex" value="남">남<input type="radio" id="sex" name="sex" value="여">여<p>
+		<input type="radio" id="age" name="age" value="성인">성인<input type="radio" id="age" name="age" value="미자">미자
+</body>
+</html>
