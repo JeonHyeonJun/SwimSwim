@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector Filter 적용예제</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//1. 홀수행 배경색을 회색
+		$('tr:odd').css('background','gray');	//홀수행일때(행은 0부터 시작합니다)
+		//2. 짝수형 배경색 초록
+		$('tr:even').css('background','green');	//짝수행일때
+		//3. 첫번째행 배경색 핑크, 글자크기 20
+		$('tr:first').css('background','pink').css('fontSize','20px');	//첫번째 행일때
+		//4. 5번째행 글자색 빨강
+		$('tr:eq(5)').css('color','red');	//5번째 행일때
+		//5. 첫번째행 제외 백그라운드 오렌지
+//		$('tr:gt(0)').css('background','orange');	//0번째 행보다 큰값일때
+		$('tr:not(tr:eq(0))').css('background','orange');	//0번째 행이 아닐때
+	})
+</script>
+</head>
+<body>
+	<table width='300'>
+		<tr><th>이름</th><th>나이</th><th>주소</th></tr>
+		<tr><td>홍길동</td><td>20</td><td>서울</td></tr>
+		<tr><td>임꺽정</td><td>25</td><td>인천</td></tr>
+		<tr><td>김선달</td><td>37</td><td>수원</td></tr>
+		<tr><td>손오공</td><td>99</td><td>부천</td></tr>
+		<tr><td>사오정</td><td>77</td><td>제천</td></tr>
+		<tr><td>저팔계</td><td>88</td><td>대구</td></tr>
+		<tr><td>허준</td><td>33</td><td>부산</td></tr>
+		<tr><td>이순신</td><td>28</td><td>울산</td></tr>
+		<tr><td>장보고</td><td>17</td><td>순천</td></tr>
+	</table>
+</body>
+</html>
