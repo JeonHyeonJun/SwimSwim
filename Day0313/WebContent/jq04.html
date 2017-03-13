@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CheckBox 예쩨</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#chkAll').click(function(){
+			if(this.checked){
+				$('#msg').text('선택해제');
+				$('.sbj').prop('checked',true);
+			}
+			else{
+				$('#msg').text('전체선택');
+				$('.sbj').prop('checked',false);
+			}
+		});
+		
+		//직접 이벤트 함수를 사용하는 방법
+/* 		$('#btn').click(function(){
+			var result = "";
+			$('.sbj:checked').each(function(){
+				result += $(this).val()+ "<br>";
+				$('#result').html(result);
+			})
+		}); */
+		
+		//이벤트 연결함수를 사용하는 방법
+/* 		$('#btn').on('click',function(){
+			alert("클릭되었습니다!");
+			$(this).off();	//이벤트 소멸
+		}); */
+		
+		$('#btn').one('click',function(){	//1회용 이벤트.1번만 실행되고 소멸
+			alert("클릭되었습니다!");
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+	<input type="checkbox" id="chkAll"><span id="msg">전체선택</span>
+	<div>
+		<input type="checkbox" class="sbj" value="HTML5">HTML5
+		<input type="checkbox" class="sbj" value="CSS3">CSS3
+		<input type="checkbox" class="sbj" value="JavaScript">JavaScript
+	</div>
+	<button id="btn">결과</button>
+	<div id="result">
+	</div>
+</body>
+</html>
