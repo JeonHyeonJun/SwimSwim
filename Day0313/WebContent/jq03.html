@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>암호확인</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//두번의 암호가 같은지 비교해서 alert
+		$('#pwdConfirm').keyup(function(){
+			if($('#pwd').val() != $(this).val()){
+				$('#lblErr').html('<b>암호가 다릅니다</b>');	//html은 html코드를 읽지만
+			}
+			else
+				$('#lblErr').text('<b>ㅇㅋ</b>');	//text는 html코드를 못읽음 그러므로 굵게 출력 안됨
+		})
+	});
+</script>
+</head>
+<body>
+	암호 : <input type="password" id="pwd">
+	<p>
+	암호확인: <input type="password" id="pwdConfirm"> 
+	<div id="lblErr">암호를 입력하세요</div>
+</body>
+</html>
