@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>값 받기</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	//onClick(function(){})
+	
+	//addEventListener('click',function(){})
+	
+	//jQuery에서도 저렇게 두가지 방법이 있음
+	//일단 첫번째 방법으로 focus와 blur이벤트 처리를 해봅시당
+	$(document).ready(function() {
+		$('#name').focus(function() {
+			//포커스되있을때 테두리 빨강
+			$(this).css('border','double red 5px');	//this는 현재 #name을 말함 
+		})
+		.blur(function() {
+			$(this).css('border','');	//테두리 삭제
+			
+			alert($(this).val());	//현재 요소노드의 value값 받아오기
+			
+			$(this).val('원하는값');	//요소노드의 value값을 세팅하기
+		});
+		
+		//다른 항목 선택시 실행하는 change메소드
+		$('#job').change(function() {
+			alert('직업은 ' +$(this).val()+ '입니다');
+		});
+	});
+</script>
+</head>
+<body>
+	이름: <input type="text" id="name">
+	<p>
+		<select id='job'>
+			<option value="회사원">회사원</option>
+			<option value="개발자">개발자</option>
+			<option value="전문직">전문직</option>
+			<option value="회계사">회계사</option>
+			<option value="의사">의사</option>
+		</select>
+</body>
+</html>
