@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 미리 크게보기</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn').on('click',function(){
+//			var img = $('<img src="good.jpg" width="100px" height="100px">');
+			var img = $('<img>');
+			img.attr({'src': 'good.jpg',
+			'width': '300px',
+			'height': '300px'});
+			$(this).after(img);
+		});
+		
+		$('.king').on('mouseover', function(){
+			var img = $('<img>');
+			img.attr('src', $(this).attr('src'));
+			img.attr({'width':'500px','height':'500px'});
+			$('#big_image').append(img);
+		}).on('mouseout', function(){
+			$('#big_image').empty();
+		});
+		
+		$('p').attr('style', function(index){
+			return 'font-size : ' +(index+1) *10 + 'px';
+		});
+	});
+</script>
+<style type="text/css">
+	#big_image{
+		width: 500px;
+		height: 500px;
+		border: 1px solid red; 
+	}
+</style>
+</head>
+<body>
+	<input type="button" id="btn" value="요소노드생성"><br>
+	<img src="good.jpg" class="king" width="100px" height="100px">
+	<img src="sad.jpg" class="king" width="100px" height="100px">
+	<div id="big_image"></div>
+	<p>하2염</p>
+	<p>하3염</p>
+	<p>하4염</p>
+	<p>하5염</p>
+	<p>하6염</p>
+</body>
+</html>
