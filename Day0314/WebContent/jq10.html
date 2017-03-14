@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>focus된 요소, click된 요소에 css효과주기</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('input').focus(function(){
+//			$(this).addClass('isFocus');
+			$(this).toggleClass('isFocus');	//toggleClass는 Class가 없으면 생성
+		}).blur(function(){
+//			$(this).removeClass('isFocus');
+			$(this).toggleClass('isFocus');	//toggleClass는 Class가 있으면 삭제
+		});
+		$('h1').on('click',function(){
+			$(this).toggleClass('isFocus');
+		})
+	});
+</script>
+<style type="text/css">
+	.isFocus{
+		border: 7px double red;
+		background-color: hotpink;
+	}
+	input{
+		width: 200px;
+	}
+</style>
+</head>
+<body>
+	<h1>하하하하하하하핳하</h1>
+	<input type="text"><br>
+	<input type="text"><br>
+	<input type="text"><br>
+	<input type="text"><br>
+	<input type="text">
+</body>
+</html>
