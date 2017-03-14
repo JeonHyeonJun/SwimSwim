@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html(), text(), val()이 jQuery에서 많이 쓰인다!</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		alert($('#div').html());	//html은 받을땐 태그까지 같이 출력. text는 반대
+		$('#div').html("<h1>Hell jQuery!</h1>");	//set할땐 태그를 적용하여 출력. text는 반대
+		
+	});
+</script>
+</head>
+<body>
+	<div id='div'>
+		<h1>디브디브딥!</h1>
+	</div>
+</body>
+</html>
