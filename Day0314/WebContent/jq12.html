@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hide앤 지킬</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.sub').hide();
+		$('#total li').hover(function(){
+			$('.sub').hide();
+			$('.sub', this).show();
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id="total">
+		<li><h1>Java</h1>
+			<ul class="sub">
+				<li>abstract</li>
+				<li>interface</li>
+				<li>inheritance</li>
+			</ul>
+		</li>
+		<li><h1>JSP</h1>
+			<ul class="sub">
+				<li>request</li>
+				<li>response</li>
+				<li>session</li>
+				<li>application</li>
+			</ul>
+		</li>
+		<li><h1>Android</h1>
+			<ul class="sub">
+				<li>geolocation</li>
+				<li>network</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
