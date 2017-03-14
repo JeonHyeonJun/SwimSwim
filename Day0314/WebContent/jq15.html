@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>animate</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#moveToRight').click(function(){
+			$('#img').animate({
+				marginLeft:'300px',
+				width: "500px",
+				height: "500px"
+			},1000);
+
+		});
+		$('#moveToLeft').click(function(){
+			$('#img').animate({
+				marginLeft:'0px',
+				width: "50px",
+				height: "50px"
+			},1000);
+	
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>animate효과</h1>
+	<input type="button" value="오른쪽?" id="moveToRight">
+	<input type="button" value="그렇다면 이쪽이군요!" id="moveToLeft">
+	<p/>
+	<img src="sad.jpg" width="50" height="50" id="img">
+</body>
+</html>
