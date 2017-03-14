@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>애니메이션 효과</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//jQuery의 기본 애니메이션 효과
+		//basic : hide()보이기, show()숨기기, toggle()보이거나숨기기
+		var img = $('#img');
+		$('#show').click(function(){
+			img.show('slow');	//느리게 나옴. slow, normal, fast, 1000 등이 있다
+		});
+		$('#hide').click(function(){
+			img.hide(3000);	//서서히 사라지면서 3초가 지나면 완료
+		});
+		$('#toggle').click(function(){
+			img.toggle(5000, function(){
+				alert("끝"); //5초에 걸쳐서 사라지거나 나오고 alert 실행
+			});		
+		});
+		//Fading : 서서히 보이기 
+		$('#fadeIn').click(function(){
+			img.fadeIn();	//투명도가 0에서 1로 서서히
+		});
+		$('#fadeOut').click(function(){
+			img.fadeOut();	//투명도가 1에서 0으로 서서히
+		});
+		$('#fadeToggle').click(function(){
+			img.fadeTo(1000,0.5);	//1초에 걸쳐서 0.5로
+		});
+		//Sliding : 미끄러져 오기
+		//Animate : 움직이기?
+	});
+</script>
+
+</head>
+<body>
+	<input type="button" id="show" value="show">
+	<input type="button" id="hide" value="hide">
+	<input type="button" id="toggle" value="toggle"><br>
+	<input type="button" id="fadeIn" value="fadeIn">
+	<input type="button" id="fadeOut" value="fadeOut">
+	<input type="button" id="fadeToggle" value="fadeToggle"><br>
+	<img src="giff.gif" id="img">
+</body>
+</html>
