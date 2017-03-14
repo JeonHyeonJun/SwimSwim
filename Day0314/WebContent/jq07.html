@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prepend, append</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var color = ['red', 'yellow', 'green', 'pink'];
+		$('h3').each(function(index){
+			$(this).css('background',color[index]);
+		});
+		var img = "<img src='digital.GIF' width='300px' height='100px'>";
+		$('#pre').on('click',function(){
+			$('#a').prepend(img);	//prepend영역  내용 전에 추가
+		});
+		$('#app').on('click',function(){
+			$('#b').append(img);	//append영역 내용 뒤에 추가
+		});
+		$('#preTo').on('click',function(){
+			$(img).prependTo('#c');	//prependTo영역 내용 앞에 추가
+		});
+		$('#appTo').on('click',function(){
+			$(img).appendTo('#d');	//appendTo영역 내용 뒤에 추가
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="pre" value="prepend">
+	<input type="button" id="app" value="append">
+	<input type="button" id="preTo" value="prependTo">
+	<input type="button" id="appTo" value="appendTo">
+	
+	<h3 id="a">prepend영역</h3>
+	<h3 id="b">append영역</h3>
+	<h3 id="c">prependTo영역</h3>
+	<h3 id="d">appendTo영역</h3>
+</body>
+</html>
