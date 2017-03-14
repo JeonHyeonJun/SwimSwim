@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>slide를 배웁니다</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#loginForm').css('background','pink');
+		$('#showLogin').click(function(){
+			$('#loginForm').slideDown();
+		});
+		$('#hideLogin').click(function(){
+			$('#loginForm').slideUp();
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="showLogin" value="로그인하기">
+	<input type="button" id="hideLogin" value="로그인무르기">
+	<div id="loginForm">
+		아이디 : <input type="text" size="10"><br>
+		비번 : <input type="password" size="10"><br>
+		<input type="button" value="로그인">
+	</div>
+</body>
+</html>
