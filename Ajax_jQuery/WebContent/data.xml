@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students>
+	<student>
+		<email>swimswim@naver.com</email>
+		<name>SwimSwim</name>
+		<age>10</age>
+	</student>
+	<student>
+		<email>swimswim2@naver.com</email>
+		<name>SwimSwim2</name>
+		<age>102</age>
+	</student>
+	<student>
+		<email>swimswim3@naver.com</email>
+		<name>SwimSwim3</name>
+		<age>103</age>
+	</student>
+</students>

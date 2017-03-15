@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//data.json에 있는 값 받기. jsp버젼
+/* 			var req = new XMLHttpRequest();
+			req.open("get", "data.json");
+			req.onreadystatechange = function() {
+				if (req.readyState == 4 && req.status == 200) {
+					alert(req.responseText);
+				}
+			};
+			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+			req.send();	 */
+
+		
+		//getJSON을 활용하여 data.json의 값 받기
+/* 		$.getJSON('data.json', function(data){
+			//응답받았을때 수행할 함수, 받은 json데이터는 매개변수로 들어옴
+			alert(data.email);	//email의 저장되있는 값 출력
+		}); */
+			
+		$('#ajaxCall').click(function(){
+			$.ajax({
+				//get인지 post인지,
+				type : 'get',
+				//어디로 보낼건지,
+				url : 'data.xml',
+				//응답받는 데이터 타입
+				dataType : 'xml',
+				//파라미터가 있다면 파라미터
+				data : "name=1&age=2",
+				//성공 시 수행할 동작
+				success : function(data){
+					$(data).find('student').each(function(){
+						//학생의 정보를 하나하나씩 전부 출력
+						//alert($(this).text());
+						
+						//각 학생의 이름만 찾아서 보기
+						alert($(this).find('name').text());
+					});
+					//alert(data);
+					//$('#forAjax').html(data);
+				},
+				//실패시 수행할 동작
+				error : function(xhrReq, status, error){
+					alert(error);	//error의 원인을 알려줌. 근데 암것도 안뜨네?
+				}
+			});
+		});
+	});
+
+		
+	
+</script>
+</head>
+<body>
+	<h1>Here is ajax_getJSON.html</h1>
+	<input type="button" value="ajax호출" id="ajaxCall">
+	<div id="forAjax"></div>
+	<!-- get() : get방식으로 ajax전송 -->
+	<!-- getJSON() : get방식으로 전송하고 json형식으로 응답을 받음 -->
+	<!-- getScript() : get방식으로 요청하고 자바스크립트 형식으로 응답을 받음 -->
+	<!-- post() : post방식으로 전송 -->
+	<!-- load() : 결과를 html로 받음 -->
+</body>
+</html>
