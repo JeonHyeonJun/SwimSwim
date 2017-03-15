@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//버튼을 눌렀을때 hello.html에 응답보내고 받기
+/* 		$('#ajaxCall').click(function(){
+			var req = new XMLHttpRequest();
+			req.open("get", "hello.html");
+			req.onreadystatechange = function() {
+				if (req.readyState == 4 && req.status == 200) {
+					alert(req.responseText);
+					$('#forAjax').html(req.responseText);	//forAjax영역에 응답받은값 출력
+				}
+			};
+			req.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+			req.send();	
+		});	 */
+		
+		//위와 같은 기능을 jQuery에선 단 2줄로 가능! ㄱㅇㄷ
+		$('#ajaxCall').click(function(){
+			$('#forAjax').load('hello.html');
+		});
+		
+	});
+
+		
+	
+</script>
+</head>
+<body>
+	<h1>Here is ajaxload.html</h1>
+	<input type="button" value="ajax호출" id="ajaxCall">
+	<div id="forAjax"></div>
+	<!-- get() : get방식으로 ajax전송 -->
+	<!-- getJSON() : get방식으로 전송하고 json형식으로 응답을 받음 -->
+	<!-- getScript() : get방식으로 요청하고 자바스크립트 형식으로 응답을 받음 -->
+	<!-- post() : post방식으로 전송 -->
+	<!-- load() : 결과를 html로 받음 -->
+</body>
+</html>
