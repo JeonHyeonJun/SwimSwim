@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.a {
+	border: solid red 5px
+}
+
+span {
+	width: 150px;
+	color: red;
+}
+
+input {
+	border: solid gray 1px
+}
+
+table {
+	width: 100%
+}
+
+th, td {
+	border: 1px gray solid;
+	text-align: center;
+	padding: 3px
+}
+
+h2 {
+	text-align: center
+}
+</style>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+ <script type="text/javascript">
+ 	function createList() {
+ 		var table = $('#listTable');
+ 		$('tr:gt(0)', table).remove();
+ 		
+ 		$.ajax({
+ 			url : 'list.do',
+ 			dataType : 'json',
+ 			type : 'get',
+ 			success : function(data){
+				var table = $("#listTable");
+				for(var i in data){
+					var btn = $('<input type="button" value="삭제">');
+					var tr = $('<tr>');
+					$('<td>').text(data[i].no).appendTo(tr);
+					$('<td>').text(data[i].id).appendTo(tr);
+					$('<td>').text(data[i].name).appendTo(tr);
+					$('<td>').text(data[i].age).appendTo(tr);
+					$('<td>').text(data[i].tel).appendTo(tr);
+					$('<td>').text(data[i].addr).appendTo(tr);
+					$('<td>').append(btn).appendTo(tr);
+					table.append(tr);
+					(function(e){
+						var id = data[i].id;
+						btn.on('click', function(){
+							$.ajax({
+								url : 'delete.do',
+								data : 'id='+id,
+					 			dataType : 'json',
+					 			type : 'post',
+					 			success : function(data){
+					 				if(data.result)
+					 					createList();
+					 			}
+							});
+						});
+					})(i);
+				}
+ 			}
+ 		});
+ 		
+	}
+ 
+ 	$(document).ready(function() {
+ 		createList();
+ 		
+ 		//id중복검사
+ 		$('#id').keyup(function(){
+ 			$.ajax({
+				//get인지 post인지,
+				type : 'post',
+				//어디로 보낼건지,
+				url : 'check.do',
+				//응답받는 데이터 타입
+				dataType : 'json',
+				//파라미터가 있다면 파라미터
+				data : $('#inForm').serialize(),
+				//성공 시 수행할 동작
+				success : function(data){
+					if(data.result){
+						$('#idcheck').text("가입");
+					}
+					else{
+						$('#idcheck').text("중복");
+					}
+						
+				},
+				//실패시 수행할 동작
+				error : function(xhrReq, status, error){
+					alert(error);	//error의 원인을 알려줌. 근데 암것도 안뜨네?
+					alert("실패");
+				}
+			});
+ 		});
+ 		
+ 		//가입
+		$('#btn').click(function(){
+			//var str = $('#inForm').serialize();
+			$.ajax({
+				//get인지 post인지,
+				type : 'post',
+				//어디로 보낼건지,
+				url : 'insert.do',
+				//응답받는 데이터 타입
+				dataType : 'json',
+				//파라미터가 있다면 파라미터
+				data : $('#inForm').serialize(),
+				//성공 시 수행할 동작
+				success : function(data){
+					if(data.result)
+						createList();
+					/* if($('#idcheck').text() == "중복")
+						alert("아이디 중복이요");
+					alert("성공");
+					alert(data.list1);
+					alert(data.list2);
+					$('#listTable').append("<tr><td>"+data.list1+"</td><td>"+data.list2+"</td></tr>"); */
+					//$('#ex').text(data);
+				},
+				//실패시 수행할 동작
+				error : function(xhrReq, status, error){
+					alert(error);	//error의 원인을 알려줌
+					alert("실패");
+				}
+			});
+		});
+	});
+ </script>
+</head>
+<body>
+	<form name="inForm" method="post" id="inForm">
+		<table cellspacing="0">
+			<tr bgcolor="pink">
+				<th>아이디</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>전화번호</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				<td style="text-align: left"><input type="text" size="8"
+					name="id" id="id"> <span id="idcheck">중복결과여부</span></td>
+				<td><input type="text" size="8" name="name" id="name"></td>
+				<td><input type="text" size="4" name="age" id="age"></td>
+				<td><input type="text" size="12" name="tel" id="tel"></td>
+				<td><input type="text" size="30" name="addr" id="addr"></td>
+			</tr>
+			<tr>
+				<td colspan="5" align="center"><input type="button"
+					value="가입하기" id="btn"></td>
+			</tr>
+		</table>
+		<br>
+		<hr color="red">
+
+		<h2>고객 리스트 !</h2>
+		<table id="listTable" cellspacing="0">
+			<tr bgcolor="pink">
+				<th>번호</th>
+				<th>아이디</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>전화번호</th>
+				<th>주소</th>
+				<th>삭제</th>
+			</tr>
+		</table>
+		</form>
+</body>
+</html>
+
+
+
+
+
+
